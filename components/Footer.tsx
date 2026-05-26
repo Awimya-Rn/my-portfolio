@@ -68,10 +68,8 @@ export default function Footer() {
         </div>
         <div style={{ padding: 24, fontFamily: "'JetBrains Mono', monospace" }}>
           <div style={{ fontSize: "0.7rem", color: "#6c7086", lineHeight: 1.8, marginBottom: 20 }}>
-            <span style={{ color: "#585b70" }}># Get in touch — I&apos;m open to opportunities!</span>
-            <br />
             <span style={{ color: "#a6e3a1" }}>❯ </span>
-            <span style={{ color: "#cdd6f4" }}>echo &quot;Looking for internships, collaborations, or just a good chat about ML!&quot;</span>
+            <span style={{ color: "#585b70" }}>echo &quot;Looking for internships, collaborations, or just a good chat about ML!&quot;</span>
             <br />
             <span style={{ color: "#cdd6f4" }}>Looking for internships, collaborations, or just a good chat about ML!</span>
           </div>
