@@ -12,6 +12,7 @@ const skills = [
   { name: "C#", color:"#178600", cat:"Language"},
   { name: "Scikit-learn", color: "#cba6f7", cat: "ML Framework" },
   { name: "TensorFlow", color: "#FF6F00", cat: "ML Framework" },
+  { name: "Grafana", color: "#009393", cat: "Monitoring" },
   { name: "Pandas", color: "#89b4fa", cat: "Data Science" },
   { name: "NLP", color: "#94e2d5", cat: "Data Science" },
   { name: "MLflow", color: "#a6e3a1", cat: "MLOps" },
@@ -19,6 +20,8 @@ const skills = [
   { name: "PostgreSQL", color: "#336791", cat: "Database" },
   { name: "Node.js", color: "#68a063", cat: "Back-End" },
   { name: "Next.js", color: "#cdd6f4", cat: "Front-End" },
+  { name: "Tailwind CSS", color: "#06b6d4", cat: "Front-End" },
+  { name: "Bootstrap", color: "#563d7c", cat: "Front-End" },
   { name: "Unity", color:"#222C37",cat:"Game Dev"},
 
 ];
