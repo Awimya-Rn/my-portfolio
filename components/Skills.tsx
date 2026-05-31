@@ -2,22 +2,25 @@
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faRobot, faMicrochip, faChartLine } from "@fortawesome/free-solid-svg-icons";
-import { GitHubCalendar } from "react-github-calendar";
-import { useEffect, useState } from 'react';
 
 const skills = [
-  { name: "Python", level: 88, color: "#3572A5", cat: "Language" },
-  { name: "Scikit-learn", level: 85, color: "#cba6f7", cat: "ML Framework" },
-  { name: "Pandas", level: 82, color: "#89b4fa", cat: "Data" },
-  { name: "TensorFlow", level: 80, color: "#FF6F00", cat: "ML Framework" },
-  { name: "NLP", level: 75, color: "#94e2d5", cat: "AI" },
-  { name: "PostgreSQL", level: 73, color: "#336791", cat: "Database" },
-  { name: "MLflow", level: 70, color: "#a6e3a1", cat: "MLOps" },
-  { name: "JavaScript", level: 70, color: "#f1e05a", cat: "Language" },
-  { name: "Node.js", level: 68, color: "#68a063", cat: "Back-End" },
-  { name: "Next.js", level: 65, color: "#cdd6f4", cat: "Front-End" },
-  { name: "Java", level: 50, color: "#b07219", cat: "Language" },
-  { name: "Docker", level: 20, color: "#fab387", cat: "DevOps" },
+  { name: "Python", color: "#3572A5", cat: "Language" },
+  { name: "JavaScript", color: "#f1e05a", cat: "Language" },
+  { name: "TypeScript", color: "#3178c6", cat: "Language" },
+  { name: "PHP", color: "#4f5b93", cat: "Language" },
+  { name: "Java", color: "#b07219", cat: "Language" },
+  { name: "C#", color:"#178600", cat:"Language"},
+  { name: "Scikit-learn", color: "#cba6f7", cat: "ML Framework" },
+  { name: "TensorFlow", color: "#FF6F00", cat: "ML Framework" },
+  { name: "Pandas", color: "#89b4fa", cat: "Data Science" },
+  { name: "NLP", color: "#94e2d5", cat: "Data Science" },
+  { name: "MLflow", color: "#a6e3a1", cat: "MLOps" },
+  { name: "Docker", color: "#fab387", cat: "DevOps" },
+  { name: "PostgreSQL", color: "#336791", cat: "Database" },
+  { name: "Node.js", color: "#68a063", cat: "Back-End" },
+  { name: "Next.js", color: "#cdd6f4", cat: "Front-End" },
+  { name: "Unity", color:"#222C37",cat:"Game Dev"},
+
 ];
 
 const topSkills = [
@@ -27,10 +30,10 @@ const topSkills = [
 ];
 
 const certifications = [
-  { name: "Belajar Dasar AI", issuer: "Dicoding Indonesia", color: "#89b4fa", icon: "🎖️" },
+  { name: "Belajar Fundamental Deep Learning", issuer: "Dicoding Indonesia", color: "#89b4fa", icon: "🎖️" },
   { name: "Algorithm & Data Structures with Python", issuer: "Dicoding Indonesia", color: "#cba6f7", icon: "🎖️" },
-  { name: "Cloud Practitioner Essentials (Belajar Dasar AWS Cloud)", issuer: "Dicoding × AWS", color: "#f9e2af", icon: "☁️" },
-  { name: "Belajar Dasar Pemrograman Web", issuer: "Dicoding Indonesia", color: "#a6e3a1", icon: "🎖️" },
+  { name: "Cloud Practitioner Essentials", issuer: "Dicoding × AWS", color: "#f9e2af", icon: "☁️" },
+  { name: "Belajar Back-End dengan JavaScript", issuer: "Dicoding Indonesia", color: "#a6e3a1", icon: "🎖️" },
   { name: "Membangun Sistem Machine Learning", issuer: "Dicoding Indonesia", color: "#94e2d5", icon: "🏆" },
 ];
 
@@ -57,7 +60,7 @@ export default function Skills() {
           {/* Left: Skills */}
           <div>
             {/* Top skills featured */}
-            <div style={{ marginBottom: 28 }}>
+            <div style={{ marginBottom: 32 }}>
               <p style={{ color: "#585b70", fontSize: "0.65rem", letterSpacing: "0.1em", marginBottom: 12 }}>
                 # KEAHLIAN TERATAS
               </p>
@@ -81,57 +84,50 @@ export default function Skills() {
               </div>
             </div>
 
-            {/* Skill bars */}
+            {/* Tech Stack List */}
             <div>
               <p style={{ color: "#585b70", fontSize: "0.65rem", letterSpacing: "0.1em", marginBottom: 16 }}>
-                # TECH STACK — htop style
+                # TECH STACK STACK LIST
               </p>
-              <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
-                {skills.map(({ name, level, color, cat }) => (
-                  <div key={name}>
+              <div style={{ display: "flex", flexWrap: "wrap", gap: 10 }}>
+                {skills.map(({ name, color, cat }) => (
+                  <div
+                    key={name}
+                    style={{
+                      display: "flex",
+                      alignItems: "center",
+                      gap: 8,
+                      padding: "8px 14px",
+                      background: "#111116",
+                      border: "1px solid #1e1e2e",
+                      borderRadius: 6,
+                    }}
+                  >
                     <div
                       style={{
-                        display: "flex",
-                        justifyContent: "space-between",
-                        marginBottom: 4,
-                        fontSize: "0.65rem",
+                        width: 6,
+                        height: 6,
+                        borderRadius: "50%",
+                        background: color,
+                        boxShadow: `0 0 6px ${color}`,
                       }}
-                    >
-                      <span style={{ color: "#a6adc8" }}>
-                        {name}{" "}
-                        <span
-                          style={{
-                            color: "#585b70",
-                            fontSize: "0.58rem",
-                            border: "1px solid #2a2a3d",
-                            padding: "1px 5px",
-                            borderRadius: 3,
-                          }}
-                        >
-                          {cat}
-                        </span>
-                      </span>
-                      <span style={{ color }}>{level}%</span>
-                    </div>
-                    <div
+                    />
+                    <span style={{ color: "#cdd6f4", fontSize: "0.75rem", fontWeight: 500 }}>
+                      {name}
+                    </span>
+                    <span
                       style={{
-                        height: 5,
-                        background: "#1e1e2e",
+                        color: "#585b70",
+                        fontSize: "0.58rem",
+                        border: "1px solid #2a2a3d",
+                        padding: "1px 5px",
                         borderRadius: 3,
-                        overflow: "hidden",
+                        background: "#0a0a0c",
+                        marginLeft: 4,
                       }}
                     >
-                      <div
-                        style={{
-                          height: "100%",
-                          width: `${level}%`,
-                          background: `linear-gradient(to right, ${color}80, ${color})`,
-                          borderRadius: 3,
-                          transition: "width 1s ease",
-                          boxShadow: `0 0 8px ${color}40`,
-                        }}
-                      />
-                    </div>
+                      {cat}
+                    </span>
                   </div>
                 ))}
               </div>
