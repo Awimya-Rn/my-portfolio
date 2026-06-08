@@ -32,16 +32,16 @@ export default function About() {
     <section
       id="about"
       style={{
-        padding: "80px 24px",
+        padding: "40px 16px", 
         maxWidth: 1100,
         margin: "0 auto",
       }}
     >
-      <div style={{ marginBottom: 40 }}>
+      <div style={{ marginBottom: 32 }}>
         <p className="section-header"># 01 — about</p>
         <h2
           style={{
-            fontSize: "1.5rem",
+            fontSize: "1.3rem", 
             fontWeight: 700,
             color: "#cdd6f4",
             letterSpacing: "-0.02em",
@@ -52,15 +52,15 @@ export default function About() {
       </div>
 
       <div
+        className="about-grid" 
         style={{
           display: "grid",
-          gridTemplateColumns: "1fr 1fr",
-          gap: 32,
+          gridTemplateColumns: "1fr", 
+          gap: 24, 
           alignItems: "start",
         }}
       >
-        {/* Terminal display */}
-        <div className="terminal-chrome">
+        <div className="terminal-chrome" style={{ width: "100%", overflowX: "auto" }}>
           <div className="terminal-titlebar">
             <div className="terminal-dot" style={{ background: "#f38ba8" }} />
             <div className="terminal-dot" style={{ background: "#f9e2af" }} />
@@ -69,7 +69,7 @@ export default function About() {
               bash — about.txt
             </span>
           </div>
-          <div style={{ padding: 20, fontFamily: "'JetBrains Mono', monospace", fontSize: "0.72rem", lineHeight: 1.8 }}>
+          <div style={{ padding: 16, fontFamily: "'JetBrains Mono', monospace", fontSize: "0.7rem", lineHeight: 1.7 }}>
             {lines.map((line, i) =>
               "isCommand" in line && line.isCommand ? (
                 <div key={i} style={{ marginBottom: 4 }}>
@@ -77,7 +77,7 @@ export default function About() {
                   <span style={{ color: "#cdd6f4" }}>{line.prompt}</span>
                 </div>
               ) : (
-                <div key={i} style={{ color: line.color || "#a6adc8" }}>
+                <div key={i} style={{ color: line.color || "#a6adc8", whiteSpace: "pre-wrap", wordBreak: "break-word" }}>
                   {line.text}
                 </div>
               )
@@ -98,8 +98,7 @@ export default function About() {
           </div>
         </div>
 
-        {/* Stats & Info cards */}
-        <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
+        <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
           {[
             {
               label: "education",
@@ -133,13 +132,13 @@ export default function About() {
             <div
               key={label}
               className="card"
-              style={{ padding: "16px 20px", display: "flex", gap: 16, alignItems: "center" }}
+              style={{ padding: "14px 16px", display: "flex", gap: 14, alignItems: "center" }}
             >
               <div
                 style={{
-                  fontSize: "1.4rem",
-                  width: 44,
-                  height: 44,
+                  fontSize: "1.2rem",
+                  width: 40,
+                  height: 40,
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
@@ -149,13 +148,13 @@ export default function About() {
                   flexShrink: 0,
                 }}
               >
-                <FontAwesomeIcon icon={icon}/>
+                <FontAwesomeIcon icon={icon} />
               </div>
               <div>
                 <div
                   style={{
                     color: "#585b70",
-                    fontSize: "0.65rem",
+                    fontSize: "0.6rem",
                     letterSpacing: "0.1em",
                     textTransform: "uppercase",
                     marginBottom: 2,
@@ -163,15 +162,27 @@ export default function About() {
                 >
                   {label}
                 </div>
-                <div style={{ color: color, fontSize: "0.8rem", fontWeight: 600, marginBottom: 2 }}>
+                <div style={{ color: color, fontSize: "0.78rem", fontWeight: 600, marginBottom: 2 }}>
                   {value}
                 </div>
-                <div style={{ color: "#6c7086", fontSize: "0.68rem" }}>{sub}</div>
+                <div style={{ color: "#6c7086", fontSize: "0.65rem" }}>{sub}</div>
               </div>
             </div>
           ))}
         </div>
       </div>
+
+      <style jsx>{`
+        @media (min-width: 768px) {
+          #about {
+            padding: 80px 24px !important;
+          }
+          .about-grid {
+            grid-template-columns: 1fr 1fr !important;
+            gap: 32px !important;
+          }
+        }
+      `}</style>
     </section>
   );
 }

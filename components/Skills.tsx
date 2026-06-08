@@ -9,7 +9,7 @@ const skills = [
   { name: "TypeScript", color: "#3178c6", cat: "Language" },
   { name: "PHP", color: "#4f5b93", cat: "Language" },
   { name: "Java", color: "#b07219", cat: "Language" },
-  { name: "C#", color:"#178600", cat:"Language"},
+  { name: "C#", color: "#178600", cat: "Language" },
   { name: "Scikit-learn", color: "#cba6f7", cat: "ML Framework" },
   { name: "TensorFlow", color: "#FF6F00", cat: "ML Framework" },
   { name: "Grafana", color: "#009393", cat: "Monitoring" },
@@ -22,8 +22,7 @@ const skills = [
   { name: "Next.js", color: "#cdd6f4", cat: "Front-End" },
   { name: "Tailwind CSS", color: "#06b6d4", cat: "Front-End" },
   { name: "Bootstrap", color: "#563d7c", cat: "Front-End" },
-  { name: "Unity", color:"#222C37",cat:"Game Dev"},
-
+  { name: "Unity", color: "#222C37", cat: "Game Dev" },
 ];
 
 const topSkills = [
@@ -45,62 +44,68 @@ export default function Skills() {
     <section
       id="skills"
       style={{
-        padding: "80px 24px",
+        padding: "48px 16px", 
         background: "#0a0a0c",
         borderTop: "1px solid #1e1e2e",
         borderBottom: "1px solid #1e1e2e",
       }}
     >
       <div style={{ maxWidth: 1100, margin: "0 auto" }}>
-        <div style={{ marginBottom: 48 }}>
+        <div style={{ marginBottom: 32 }}>
           <p className="section-header"># 04 — skills & certs</p>
-          <h2 style={{ fontSize: "1.5rem", fontWeight: 700, color: "#cdd6f4", letterSpacing: "-0.02em" }}>
+          <h2 style={{ fontSize: "1.3rem", fontWeight: 700, color: "#cdd6f4", letterSpacing: "-0.02em" }}>
             <span style={{ color: "#f9e2af" }}>./</span>skills_and_certifications
           </h2>
         </div>
 
-        <div style={{ display: "grid", gridTemplateColumns: "1.2fr 1fr", gap: 40, alignItems: "start" }}>
-          {/* Left: Skills */}
+        <div
+          className="skills-grid-container"
+          style={{
+            display: "grid",
+            gridTemplateColumns: "1fr", 
+            gap: 32,
+            alignItems: "start"
+          }}
+        >
           <div>
-            {/* Top skills featured */}
             <div style={{ marginBottom: 32 }}>
               <p style={{ color: "#585b70", fontSize: "0.65rem", letterSpacing: "0.1em", marginBottom: 12 }}>
                 # KEAHLIAN TERATAS
               </p>
-              <div style={{ display: "flex", gap: 10 }}>
+              <div style={{ display: "flex", gap: 8, justifyContent: "space-between" }}>
                 {topSkills.map(({ name, icon, color }) => (
                   <div
                     key={name}
                     style={{
                       flex: 1,
-                      padding: "14px",
+                      padding: "12px 8px", 
                       background: `${color}08`,
                       border: `1px solid ${color}25`,
                       borderRadius: 8,
                       textAlign: "center",
+                      minWidth: 0,
                     }}
                   >
-                    <div style={{ fontSize: "1.5rem", marginBottom: 6 }}><FontAwesomeIcon icon={icon} /></div>
-                    <div style={{ color, fontSize: "0.75rem", fontWeight: 700 }}>{name}</div>
+                    <div style={{ fontSize: "1.3rem", color, marginBottom: 6 }}><FontAwesomeIcon icon={icon} /></div>
+                    <div style={{ color: "#cdd6f4", fontSize: "0.7rem", fontWeight: 700 }}>{name}</div>
                   </div>
                 ))}
               </div>
             </div>
 
-            {/* Tech Stack List */}
             <div>
               <p style={{ color: "#585b70", fontSize: "0.65rem", letterSpacing: "0.1em", marginBottom: 16 }}>
-                # TECH STACK STACK LIST
+                # TECH STACK LIST
               </p>
-              <div style={{ display: "flex", flexWrap: "wrap", gap: 10 }}>
+              <div style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>
                 {skills.map(({ name, color, cat }) => (
                   <div
                     key={name}
                     style={{
                       display: "flex",
                       alignItems: "center",
-                      gap: 8,
-                      padding: "8px 14px",
+                      gap: 6,
+                      padding: "6px 10px",
                       background: "#111116",
                       border: "1px solid #1e1e2e",
                       borderRadius: 6,
@@ -108,25 +113,27 @@ export default function Skills() {
                   >
                     <div
                       style={{
-                        width: 6,
-                        height: 6,
+                        width: 5,
+                        height: 5,
                         borderRadius: "50%",
                         background: color,
                         boxShadow: `0 0 6px ${color}`,
+                        flexShrink: 0,
                       }}
                     />
-                    <span style={{ color: "#cdd6f4", fontSize: "0.75rem", fontWeight: 500 }}>
+                    <span style={{ color: "#cdd6f4", fontSize: "0.7rem", fontWeight: 500 }}>
                       {name}
                     </span>
                     <span
                       style={{
                         color: "#585b70",
-                        fontSize: "0.58rem",
+                        fontSize: "0.55rem",
                         border: "1px solid #2a2a3d",
-                        padding: "1px 5px",
+                        padding: "1px 4px",
                         borderRadius: 3,
                         background: "#0a0a0c",
-                        marginLeft: 4,
+                        marginLeft: 2,
+                        fontFamily: "'JetBrains Mono', monospace",
                       }}
                     >
                       {cat}
@@ -137,21 +144,49 @@ export default function Skills() {
             </div>
           </div>
 
-          {/* Right: Certifications */}
           <div>
             <p style={{ color: "#585b70", fontSize: "0.65rem", letterSpacing: "0.1em", marginBottom: 16 }}>
               # CERTIFICATIONS
             </p>
-            <div className="terminal-chrome" style={{ marginBottom: 20 }}>
-              <div className="terminal-titlebar">
-                <div className="terminal-dot" style={{ background: "#f38ba8" }} />
-                <div className="terminal-dot" style={{ background: "#f9e2af" }} />
-                <div className="terminal-dot" style={{ background: "#a6e3a1" }} />
-                <span style={{ color: "#585b70", fontSize: "0.65rem", marginLeft: 8 }}>
+
+            <div
+              className="terminal-chrome"
+              style={{
+                marginBottom: 20,
+                background: "#111116",
+                border: "1px solid #1e1e2e",
+                borderRadius: 6,
+                overflow: "hidden"
+              }}
+            >
+              <div
+                className="terminal-titlebar"
+                style={{
+                  background: "#181825",
+                  padding: "8px 12px",
+                  display: "flex",
+                  alignItems: "center",
+                  gap: 6,
+                  borderBottom: "1px solid #1e1e2e"
+                }}
+              >
+                <div className="terminal-dot" style={{ width: 8, height: 8, borderRadius: "50%", background: "#f38ba8" }} />
+                <div className="terminal-dot" style={{ width: 8, height: 8, borderRadius: "50%", background: "#f9e2af" }} />
+                <div className="terminal-dot" style={{ width: 8, height: 8, borderRadius: "50%", background: "#a6e3a1" }} />
+                <span style={{ color: "#585b70", fontSize: "0.6rem", marginLeft: 4, fontFamily: "'JetBrains Mono', monospace" }}>
                   certs.json
                 </span>
               </div>
-              <div style={{ padding: 16, fontFamily: "'JetBrains Mono', monospace", fontSize: "0.65rem", lineHeight: 1.8 }}>
+              <div
+                style={{
+                  padding: 14,
+                  fontFamily: "'JetBrains Mono', monospace",
+                  fontSize: "0.6rem",
+                  lineHeight: 1.7,
+                  overflowX: "auto", 
+                  whiteSpace: "nowrap"
+                }}
+              >
                 <div style={{ color: "#585b70" }}>{"{"}</div>
                 <div style={{ paddingLeft: 12, color: "#6c7086" }}>&quot;certifications&quot;: [</div>
                 {certifications.map((cert, i) => (
@@ -170,14 +205,18 @@ export default function Skills() {
                   key={i}
                   className="card"
                   style={{
-                    padding: "12px 16px",
+                    padding: "12px",
+                    background: "#111116",
+                    border: "1px solid #1e1e2e",
+                    borderRadius: 6,
                     display: "flex",
                     alignItems: "center",
                     gap: 12,
-                    borderLeft: `2px solid ${cert.color}50`,
+                    borderLeft: `3px solid ${cert.color}`,
+                    minWidth: 0,
                   }}
                 >
-                  <span style={{ fontSize: "1rem", flexShrink: 0 }}>{cert.icon}</span>
+                  <span style={{ fontSize: "1.1rem", flexShrink: 0 }}>{cert.icon}</span>
                   <div style={{ flex: 1, minWidth: 0 }}>
                     <div
                       style={{
@@ -187,7 +226,7 @@ export default function Skills() {
                         overflow: "hidden",
                         textOverflow: "ellipsis",
                         whiteSpace: "nowrap",
-                        marginBottom: 2,
+                        marginBottom: 3,
                       }}
                     >
                       {cert.name}
@@ -196,8 +235,8 @@ export default function Skills() {
                   </div>
                   <div
                     style={{
-                      width: 8,
-                      height: 8,
+                      width: 6,
+                      height: 6,
                       borderRadius: "50%",
                       background: cert.color,
                       flexShrink: 0,
@@ -210,6 +249,18 @@ export default function Skills() {
           </div>
         </div>
       </div>
+
+      <style jsx>{`
+        @media (min-width: 768px) {
+          .skills-grid-container {
+            grid-template-columns: 1.2fr 1fr !important;
+            gap: 40px !important;
+          }
+          section {
+            padding: 80px 24px !important;
+          }
+        }
+      `}</style>
     </section>
   );
 }

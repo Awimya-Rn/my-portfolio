@@ -1,8 +1,7 @@
 "use client";
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-// icon otak, piala, mentoring, member
-import {faBrain, faChalkboardTeacher, faUsers, faRobot} from '@fortawesome/free-solid-svg-icons';
+import { faBrain, faChalkboardTeacher, faUsers, faRobot } from '@fortawesome/free-solid-svg-icons';
 
 const experiences = [
   {
@@ -59,39 +58,43 @@ export default function Experience() {
     <section
       id="experience"
       style={{
-        padding: "80px 24px",
+        padding: "40px 16px", 
         background: "#0a0a0c",
         borderTop: "1px solid #1e1e2e",
         borderBottom: "1px solid #1e1e2e",
       }}
     >
       <div style={{ maxWidth: 1100, margin: "0 auto" }}>
-        <div style={{ marginBottom: 48 }}>
+
+        {/* Header Section */}
+        <div style={{ marginBottom: 32 }}>
           <p className="section-header"># 02 — experience</p>
-          <h2 style={{ fontSize: "1.5rem", fontWeight: 700, color: "#cdd6f4", letterSpacing: "-0.02em" }}>
+          <h2 style={{ fontSize: "1.3rem", fontWeight: 700, color: "#cdd6f4", letterSpacing: "-0.02em" }}>
             <span style={{ color: "#cba6f7" }}>./</span>work_experience
           </h2>
         </div>
 
-        {/* Terminal-style header */}
         <div
           style={{
             fontFamily: "'JetBrains Mono', monospace",
-            fontSize: "0.72rem",
+            fontSize: "0.65rem", 
             color: "#585b70",
-            marginBottom: 32,
+            marginBottom: 24,
+            overflowX: "auto",
+            whiteSpace: "nowrap", 
+            paddingBottom: 4,
           }}
         >
           <span style={{ color: "#a6e3a1" }}>❯ </span>
           <span style={{ color: "#cdd6f4" }}>cat ~/experience.log | sort -r | head -10</span>
         </div>
 
-        <div style={{ position: "relative", paddingLeft: 28 }}>
-          {/* Timeline line */}
+        <div style={{ position: "relative", paddingLeft: 20 }}> 
+
           <div
             style={{
               position: "absolute",
-              left: 8,
+              left: 4, 
               top: 0,
               bottom: 0,
               width: 1,
@@ -99,49 +102,48 @@ export default function Experience() {
             }}
           />
 
-          <div style={{ display: "flex", flexDirection: "column", gap: 28 }}>
+          <div style={{ display: "flex", flexDirection: "column", gap: 24 }}>
             {experiences.map((exp, i) => (
-              
               <div
                 key={i}
-                style={{ position: "relative", animationDelay: `${i * 0.1}s` }}
+                style={{ position: "relative" }}
               >
-                {/* Dot */}
                 <div
                   style={{
                     position: "absolute",
-                    left: -24,
+                    left: -20, 
                     top: 20,
-                    width: 10,
-                    height: 10,
+                    width: 8,
+                    height: 8,
                     borderRadius: "50%",
                     background: exp.color,
                     border: `2px solid #0a0a0c`,
-                    boxShadow: `0 0 10px ${exp.color}60`,
+                    boxShadow: `0 0 8px ${exp.color}60`,
                   }}
                 />
 
                 <div
                   className="card"
-                  style={{ padding: 24, borderLeft: `2px solid ${exp.color}30` }}
+                  style={{
+                    padding: "16px", 
+                    borderLeft: `2px solid ${exp.color}30`
+                  }}
                 >
-                  {/* Header */}
                   <div
+                    className="experience-card-header"
                     style={{
                       display: "flex",
-                      justifyContent: "space-between",
-                      alignItems: "flex-start",
-                      flexWrap: "wrap",
+                      flexDirection: "column", 
                       gap: 8,
                       marginBottom: 12,
                     }}
                   >
                     <div>
-                      <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 4 }}>
-                        <span style={{ fontSize: "1.2rem" }}>
+                      <div style={{ display: "flex", alignItems: "center", gap: 6, flexWrap: "wrap", marginBottom: 4 }}>
+                        <span style={{ fontSize: "1rem", color: exp.color, display: "flex", alignItems: "center" }}>
                           <FontAwesomeIcon icon={exp.icon} />
                         </span>
-                        <h3 style={{ color: exp.color, fontSize: "0.95rem", fontWeight: 700 }}>
+                        <h3 style={{ color: exp.color, fontSize: "0.85rem", fontWeight: 700, margin: 0 }}>
                           {exp.title}
                         </h3>
                         <span
@@ -149,30 +151,31 @@ export default function Experience() {
                             background: `${exp.color}15`,
                             border: `1px solid ${exp.color}30`,
                             color: exp.color,
-                            fontSize: "0.6rem",
-                            padding: "2px 8px",
+                            fontSize: "0.55rem",
+                            padding: "1px 6px",
                             borderRadius: 4,
-                            letterSpacing: "0.1em",
+                            letterSpacing: "0.05em",
                           }}
                         >
                           {exp.type}
                         </span>
                       </div>
-                      <p style={{ color: "#a6adc8", fontSize: "0.78rem" }}>{exp.org}</p>
+                      <p style={{ color: "#a6adc8", fontSize: "0.75rem", margin: 0 }}>{exp.org}</p>
                       {exp.location && (
-                        <p style={{ color: "#585b70", fontSize: "0.68rem", marginTop: 2 }}>
+                        <p style={{ color: "#585b70", fontSize: "0.65rem", marginTop: 4, marginBottom: 0 }}>
                           📍 {exp.location}
                         </p>
                       )}
                     </div>
-                    <div style={{ textAlign: "right", flexShrink: 0 }}>
-                      <div style={{ color: "#6c7086", fontSize: "0.68rem" }}>{exp.period}</div>
+
+                    <div className="experience-time-info" style={{ textAlign: "left" }}> 
+                      <div style={{ color: "#6c7086", fontSize: "0.65rem" }}>{exp.period}</div>
                       <div
                         style={{
                           color: "#585b70",
-                          fontSize: "0.65rem",
+                          fontSize: "0.6rem",
                           background: "#1e1e2e",
-                          padding: "2px 8px",
+                          padding: "2px 6px",
                           borderRadius: 4,
                           marginTop: 4,
                           display: "inline-block",
@@ -183,7 +186,6 @@ export default function Experience() {
                     </div>
                   </div>
 
-                  {/* Achievement badge */}
                   {exp.achievement && (
                     <div
                       style={{
@@ -191,29 +193,28 @@ export default function Experience() {
                         background: "rgba(249,226,175,0.1)",
                         border: "1px solid rgba(249,226,175,0.3)",
                         color: "#f9e2af",
-                        fontSize: "0.7rem",
-                        padding: "4px 12px",
+                        fontSize: "0.65rem",
+                        padding: "3px 10px",
                         borderRadius: 4,
                         marginBottom: 12,
                       }}
                     >
-                      {exp.achievement}
+                      🏅 {exp.achievement}
                     </div>
                   )}
 
-                  {/* Description */}
                   <p
                     style={{
                       color: "#6c7086",
-                      fontSize: "0.73rem",
-                      lineHeight: 1.8,
-                      marginBottom: 14,
+                      fontSize: "0.7rem",
+                      lineHeight: 1.6,
+                      marginBottom: 12,
+                      marginTop: 0,
                     }}
                   >
                     {exp.desc}
                   </p>
 
-                  {/* Tags */}
                   <div style={{ display: "flex", gap: 6, flexWrap: "wrap" }}>
                     {exp.tags.map((tag) => (
                       <span
@@ -221,8 +222,8 @@ export default function Experience() {
                         style={{
                           background: "#1e1e2e",
                           color: "#a6adc8",
-                          fontSize: "0.65rem",
-                          padding: "3px 10px",
+                          fontSize: "0.6rem",
+                          padding: "2px 8px",
                           borderRadius: 4,
                           border: "1px solid #2a2a3d",
                           fontFamily: "'JetBrains Mono', monospace",
@@ -238,6 +239,25 @@ export default function Experience() {
           </div>
         </div>
       </div>
+
+      <style jsx>{`
+        @media (min-width: 768px) {
+          #experience {
+            padding: 80px 24px !important;
+          }
+          .experience-card-header {
+            flex-direction: row !important;
+            justify-content: space-between !important;
+            align-items: flex-start !important;
+          }
+          .experience-time-info {
+            text-align: right !important;
+          }
+          .card {
+            padding: 24px !important;
+          }
+        }
+      `}</style>
     </section>
   );
 }

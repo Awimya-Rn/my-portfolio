@@ -49,15 +49,15 @@ export default function Hero() {
         minHeight: "100vh",
         display: "flex",
         alignItems: "center",
-        padding: "80px 24px 40px",
+        padding: "80px 16px 40px", 
         position: "relative",
         overflow: "hidden",
         backgroundColor: "#0a0a0c",
-        backgroundImage: `linear-gradient(rgba(20, 20, 25, 0.6), rgba(20, 20, 25, 0.6)), url('https://images.alphacoders.com/935/thumb-1920-935892.png')`,
-        backgroundSize:"cover"
+        backgroundImage: `linear-gradient(rgba(20, 20, 25, 0.75), rgba(20, 20, 25, 0.75)), url('https://images2.alphacoders.com/987/thumb-1920-987174.jpg')`, 
+        backgroundSize: "cover",
+        backgroundPosition: "center",
       }}
     >
-      {/* Background grid */}
       <div
         style={{
           position: "absolute",
@@ -69,68 +69,57 @@ export default function Hero() {
         }}
       />
 
-      {/* Glow orb */}
       <div
         style={{
           position: "absolute",
-          top: "20%",
-          right: "10%",
-          width: 400,
-          height: 400,
+          top: "10%",
+          right: "-10%",
+          width: 250,
+          height: 250,
           borderRadius: "50%",
-          background: "radial-gradient(circle, rgba(203,166,247,0.06) 0%, transparent 70%)",
-          pointerEvents: "none",
-        }}
-      />
-      <div
-        style={{
-          position: "absolute",
-          bottom: "10%",
-          left: "5%",
-          width: 300,
-          height: 300,
-          borderRadius: "50%",
-          background: "radial-gradient(circle, rgba(137,180,250,0.05) 0%, transparent 70%)",
+          background: "radial-gradient(circle, rgba(203,166,247,0.05) 0%, transparent 70%)",
           pointerEvents: "none",
         }}
       />
 
       <div
+        className="hero-grid"
         style={{
           maxWidth: 1100,
           margin: "0 auto",
           width: "100%",
           display: "grid",
-          gridTemplateColumns: "1fr 1fr",
-          gap: 40,
+          gridTemplateColumns: "1fr", 
+          gap: 32,
           alignItems: "center",
+          position: "relative",
+          zIndex: 2,
         }}
       >
-        {/* Left: Main info */}
-        <div style={{ animation: "fadeInUp 0.8s ease forwards" }}>
-          {/* ASCII art */}
-          <pre
-            style={{
-              color: "#f9e2af",
-              fontSize: "0.55rem",
-              lineHeight: 1.2,
-              marginBottom: 24,
-              opacity: 0.7,
-              letterSpacing: "0.05em",
-              fontFamily: "monospace",
-            }}
-          >
-            {ASCII_ART}
-          </pre>
+        <div style={{ width: "100%" }}>
+          <div style={{ width: "100%", overflowX: "auto", overflowY: "hidden", marginBottom: 20 }}>
+            <pre
+              style={{
+                color: "#f9e2af",
+                fontSize: "clamp(0.28rem, 1.2vw, 0.55rem)", 
+                lineHeight: 1.2,
+                opacity: 0.6,
+                letterSpacing: "0.05em",
+                fontFamily: "monospace",
+                margin: 0,
+              }}
+            >
+              {ASCII_ART}
+            </pre>
+          </div>
 
-          {/* Prompt line */}
           <div
             style={{
               display: "flex",
               alignItems: "baseline",
-              gap: 8,
+              gap: 6,
               marginBottom: 8,
-              fontSize: "0.75rem",
+              fontSize: "0.7rem",
               color: "#585b70",
             }}
           >
@@ -142,17 +131,16 @@ export default function Hero() {
             <span style={{ color: "#cdd6f4" }}>whoami</span>
           </div>
 
-          {/* Name */}
           <h1
             style={{
-              fontSize: "clamp(1.4rem, 3vw, 2rem)",
+              fontSize: "clamp(1.4rem, 6vw, 2.2rem)", 
               fontWeight: 700,
               color: "#cdd6f4",
               fontFamily: "'JetBrains Mono', monospace",
               letterSpacing: "-0.02em",
               lineHeight: 1.2,
               marginBottom: 16,
-              minHeight: "2.4em",
+              minHeight: "1.4em",
             }}
           >
             {typed}
@@ -160,25 +148,25 @@ export default function Hero() {
               <span
                 style={{
                   display: "inline-block",
-                  width: 10,
-                  height: "1.1em",
+                  width: 8,
+                  height: "1em",
                   background: "#f9e2af",
-                  marginLeft: 3,
+                  marginLeft: 4,
                   verticalAlign: "middle",
                 }}
               />
             )}
           </h1>
 
-          {/* Tagline */}
           <p
             style={{
-              fontSize: "0.75rem",
-              color: "#cdd6f4",
-              lineHeight: 1.8,
+              fontSize: "0.72rem",
+              color: "#a6adc8",
+              lineHeight: 1.7,
               marginBottom: 24,
               borderLeft: "2px solid #f9e2af",
               paddingLeft: 12,
+              margin: "0 0 24px 0",
             }}
           >
             Informatics Engineering Student at Malang State Polytechnic
@@ -190,14 +178,13 @@ export default function Hero() {
             Distinction Graduation — ML Cohort at Asah × Accenture 2025
           </p>
 
-          {/* Color palette */}
           <div style={{ display: "flex", gap: 4, marginBottom: 24 }}>
             {COLORS.map((c) => (
               <div
                 key={c}
                 style={{
-                  width: 24,
-                  height: 24,
+                  width: 20,
+                  height: 20,
                   borderRadius: 3,
                   background: c,
                   opacity: 0.8,
@@ -207,7 +194,7 @@ export default function Hero() {
           </div>
 
           {/* CTA Buttons */}
-          <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
+          <div style={{ display: "flex", gap: 10, flexWrap: "wrap" }}>
             {[
               { label: "$ view projects", href: "#projects", accent: "#a6e3a1" },
               { label: "$ contact me", href: "#contact", accent: "#89b4fa" },
@@ -217,10 +204,10 @@ export default function Hero() {
                 href={href}
                 style={{
                   display: "inline-block",
-                  padding: "8px 18px",
+                  padding: "10px 18px", 
                   border: `1px solid ${accent}`,
                   color: accent,
-                  fontSize: "0.72rem",
+                  fontSize: "0.7rem",
                   borderRadius: 4,
                   textDecoration: "none",
                   fontFamily: "'JetBrains Mono', monospace",
@@ -244,8 +231,14 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* Right: Neofetch terminal */}
-        <div className="terminal-chrome float-anim" style={{ maxWidth: 480 }}>
+        <div
+          className="terminal-chrome"
+          style={{
+            maxWidth: "100%",
+            width: "100%",
+            margin: "0 auto"
+          }}
+        >
           <div className="terminal-titlebar">
             <div className="terminal-dot" style={{ background: "#f38ba8" }} />
             <div className="terminal-dot" style={{ background: "#f9e2af" }} />
@@ -254,15 +247,26 @@ export default function Hero() {
               neofetch — Rn@Awimya
             </span>
           </div>
-          <div style={{ padding: 20, display: "flex", gap: 20 }}>
-            {/* ASCII avatar */}
+
+          <div
+            className="neofetch-content"
+            style={{
+              padding: 16,
+              display: "flex",
+              flexDirection: "row", 
+              gap: 16,
+              alignItems: "flex-start"
+            }}
+          >
             <pre
               style={{
                 color: "#f9e2af",
-                fontSize: "0.5rem",
-                lineHeight: 1.15,
+                fontSize: "clamp(0.35rem, 1.8vw, 0.5rem)", 
+                lineHeight: 1.1,
                 flexShrink: 0,
                 opacity: 0.8,
+                margin: 0,
+                fontFamily: "monospace",
               }}
             >
 {`⠀⠀⠀⠀⢷⠀⢠⢣⡏
@@ -286,9 +290,8 @@ export default function Hero() {
 ⠀⠀⢸⡇⣿⣿⣿⣿⣿⡏⣿⣿⣿⣿⣿⣿⣿⡇
 ⠀⠀⠀⢰⣶⣶⣶⣾⣿⢃⣿⣿⣿⣿⣯⣿⣭⠁`}
             </pre>
-
-            <div style={{ flex: 1 }}>
-              <div style={{ fontSize: "0.72rem", marginBottom: 6 }}>
+            <div style={{ flex: 1, minWidth: 0, fontFamily: "'JetBrains Mono', monospace" }}>
+              <div style={{ fontSize: "0.7rem", marginBottom: 4 }}>
                 <span style={{ color: "#a6e3a1" }}>Rn</span>
                 <span style={{ color: "#585b70" }}>@</span>
                 <span style={{ color: "#89b4fa" }}>Awimya</span>
@@ -296,24 +299,25 @@ export default function Hero() {
               <div
                 style={{
                   borderBottom: "1px solid #1e1e2e",
-                  marginBottom: 8,
+                  marginBottom: 6,
                 }}
               />
-              <div className="neofetch-box">
+              <div style={{ fontSize: "0.62rem", lineHeight: 1.5 }}>
                 {NEOFETCH.map(({ label, value, color }) => (
-                  <div key={label} style={{ marginBottom: 3 }}>
+                  <div key={label} style={{ marginBottom: 2, wordBreak: "break-word" }}>
                     <span style={{ color }}>{label}</span>
                     <span style={{ color: "#585b70" }}>: </span>
                     <span style={{ color: "#cdd6f4" }}>{value}</span>
                   </div>
                 ))}
-                <div style={{ marginTop: 10, display: "flex", gap: 4, flexWrap: "wrap" }}>
+
+                <div style={{ marginTop: 8, display: "flex", gap: 3, flexWrap: "wrap" }}>
                   {COLORS.map((c) => (
                     <div
                       key={c}
                       style={{
-                        width: 16,
-                        height: 16,
+                        width: 12,
+                        height: 12,
                         borderRadius: 2,
                         background: c,
                       }}
@@ -325,6 +329,22 @@ export default function Hero() {
           </div>
         </div>
       </div>
+
+      <style jsx>{`
+        @media (min-width: 768px) {
+          #hero {
+            padding: 80px 24px 40px !important;
+          }
+          .hero-grid {
+            grid-template-columns: 1.2fr 1fr !important;
+            gap: 40px !important;
+          }
+          .neofetch-content {
+            padding: 20px !important;
+            gap: 20px !important;
+          }
+        }
+      `}</style>
     </section>
   );
 }
