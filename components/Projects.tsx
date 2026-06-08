@@ -10,7 +10,8 @@ const projects = [
     langName: "Python",
     stars: 0,
     status: "completed",
-    icon: "⚙️", 
+    icon: "/.",
+    image: "https://github-production-user-asset-6210df.s3.amazonaws.com/78943866/604473874-a81b6bfd-981d-42a5-85c7-db14de72d73f.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20260608%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20260608T140512Z&X-Amz-Expires=300&X-Amz-Signature=1d9391b3c54d321198387364d29c0d63e5ec3c31b3b1ea56613ebe6a0a67adae&X-Amz-SignedHeaders=host&response-content-type=image%2Fpng", 
   },
   {
     name: "Web Laboratory for Applied Informatics",
@@ -21,7 +22,8 @@ const projects = [
     langName: "PHP",
     stars: 0,
     status: "completed",
-    icon: "🔬",
+    icon: "/.",
+    image: "https://github-production-user-asset-6210df.s3.amazonaws.com/78943866/604475602-bdcf3fa3-dd29-4464-b3f6-816d06f3d2e3.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20260608%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20260608T140750Z&X-Amz-Expires=300&X-Amz-Signature=87f296eb3e8275c6e9ac0037148a5c2fd0dcb8ceaf87eda9b521fbbf60b96e5e&X-Amz-SignedHeaders=host&response-content-type=image%2Fpng",
   },
   {
     name: "Magicaffeine",
@@ -32,7 +34,8 @@ const projects = [
     langName: "C#",
     stars: 0,
     status: "completed",
-    icon: "☕",
+    icon: "/.",
+    image: "https://img.itch.zone/aW1hZ2UvMzc2MDU1Ny8yMjQ4MTM4My5wbmc=/794x1000/7n7tW%2B.png",
   },
   {
     name: "Comming Soon",
@@ -43,7 +46,8 @@ const projects = [
     langName: "None",
     stars: "-",
     status: "wip",
-    icon: "📁",
+    icon: "/.",
+    image: "https://static.vecteezy.com/system/resources/thumbnails/071/344/857/large/error-pixel-art-glitch-animation-with-distorted-text-digital-screen-effect-video.jpg",
   },
   {
     name: "Comming Soon",
@@ -54,7 +58,8 @@ const projects = [
     langName: "None",
     stars: "-",
     status: "wip",
-    icon: "📁",
+    icon: "/.",
+    image: "https://static.vecteezy.com/system/resources/thumbnails/071/344/857/large/error-pixel-art-glitch-animation-with-distorted-text-digital-screen-effect-video.jpg",
   },
   {
     name: "Comming Soon",
@@ -65,7 +70,8 @@ const projects = [
     langName: "None",
     stars: "-",
     status: "wip",
-    icon: "📁",
+    icon: "/.",
+    image: "https://static.vecteezy.com/system/resources/thumbnails/071/344/857/large/error-pixel-art-glitch-animation-with-distorted-text-digital-screen-effect-video.jpg",
   },
 ];
 
@@ -80,7 +86,7 @@ export default function Projects() {
     <section
       id="projects"
       style={{
-        padding: "48px 16px", 
+        padding: "48px 16px",
         maxWidth: 1100,
         margin: "0 auto"
       }}
@@ -96,7 +102,7 @@ export default function Projects() {
             fontSize: "0.68rem",
             color: "#585b70",
             marginTop: 12,
-            overflowX: "auto", 
+            overflowX: "auto",
             whiteSpace: "nowrap",
             paddingBottom: 4
           }}
@@ -111,8 +117,8 @@ export default function Projects() {
         className="projects-grid"
         style={{
           display: "grid",
-          gridTemplateColumns: "1fr", 
-          gap: 16, 
+          gridTemplateColumns: "1fr",
+          gap: 16,
         }}
       >
         {projects.map((proj, i) => (
@@ -120,112 +126,133 @@ export default function Projects() {
             key={i}
             className="card"
             style={{
-              padding: 20, 
+              padding: 0,
               borderTop: `2px solid ${proj.color}40`,
-              background: "#111114", 
+              background: "#111114",
               borderRadius: 6,
               display: "flex",
               flexDirection: "column",
-              gap: 12,
               cursor: "pointer",
               boxShadow: "0 4px 12px rgba(0,0,0,0.1)",
-              minWidth: 0, 
+              minWidth: 0,
+              overflow: "hidden" 
             }}
           >
-            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", gap: 12 }}>
-              <div style={{ display: "flex", alignItems: "center", gap: 10, minWidth: 0 }}>
-                <span style={{ fontSize: "1.1rem", flexShrink: 0 }}>{proj.icon}</span>
-                <div style={{ minWidth: 0 }}>
-                  <h3
-                    style={{
-                      color: proj.color,
-                      fontSize: "0.85rem",
-                      fontWeight: 700,
-                      fontFamily: "'JetBrains Mono', monospace",
-                      margin: 0,
-                      overflow: "hidden",
-                      textOverflow: "ellipsis",
-                      whiteSpace: "nowrap" 
-                    }}
-                  >
-                    {proj.name}
-                  </h3>
-                </div>
-              </div>
-              <span
-                style={{
-                  background: `${statusMap[proj.status].color}12`,
-                  border: `1px solid ${statusMap[proj.status].color}25`,
-                  color: statusMap[proj.status].color,
-                  fontSize: "0.58rem",
-                  padding: "3px 8px",
-                  borderRadius: 20,
-                  letterSpacing: "0.05em",
-                  flexShrink: 0,
-                }}
-              >
-                ● {statusMap[proj.status].label}
-              </span>
-            </div>
-
-            <p
-              style={{
-                color: "#a6adc8", 
-                fontSize: "0.72rem",
-                lineHeight: 1.6,
-                flexGrow: 1,
-                margin: 0,
-              }}
-            >
-              {proj.desc}
-            </p>
-
-            <div style={{ display: "flex", gap: 6, flexWrap: "wrap", marginTop: 4 }}>
-              {proj.tags.map((tag) => (
-                <span
-                  key={tag}
+            {/* Bagian Gambar */}
+            {proj.image && (
+              <div style={{ width: "100%", height: "140px", overflow: "hidden", position: "relative" }}>
+                <img
+                  src={proj.image}
+                  alt={proj.name}
                   style={{
-                    background: "#1e1e2e",
-                    color: "#a6adc8",
+                    width: "100%",
+                    height: "100%",
+                    objectFit: "cover",
+                    opacity: 0.85,
+                    transition: "opacity 0.3s ease"
+                  }}
+                  onMouseOver={(e) => (e.currentTarget.style.opacity = "1")}
+                  onMouseOut={(e) => (e.currentTarget.style.opacity = "0.85")}
+                />
+              </div>
+            )}
+
+            <div style={{ padding: 20, display: "flex", flexDirection: "column", gap: 12, flexGrow: 1 }}>
+              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", gap: 12 }}>
+                <div style={{ display: "flex", alignItems: "center", gap: 10, minWidth: 0 }}>
+                  <span style={{ fontSize: "1.1rem", flexShrink: 0 }}>{proj.icon}</span>
+                  <div style={{ minWidth: 0 }}>
+                    <h3
+                      style={{
+                        color: proj.color,
+                        fontSize: "0.85rem",
+                        fontWeight: 700,
+                        fontFamily: "'JetBrains Mono', monospace",
+                        margin: 0,
+                        overflow: "hidden",
+                        textOverflow: "ellipsis",
+                        whiteSpace: "nowrap"
+                      }}
+                    >
+                      {proj.name}
+                    </h3>
+                  </div>
+                </div>
+                <span
+                  style={{
+                    background: `${statusMap[proj.status].color}12`,
+                    border: `1px solid ${statusMap[proj.status].color}25`,
+                    color: statusMap[proj.status].color,
                     fontSize: "0.58rem",
                     padding: "3px 8px",
-                    borderRadius: 4,
-                    border: "1px solid #2a2a3d",
-                    fontFamily: "'JetBrains Mono', monospace",
+                    borderRadius: 20,
+                    letterSpacing: "0.05em",
+                    flexShrink: 0,
                   }}
                 >
-                  {tag}
-                </span>
-              ))}
-            </div>
-
-            <div
-              style={{
-                display: "flex",
-                justifyContent: "space-between",
-                alignItems: "center",
-                paddingTop: 10,
-                borderTop: "1px solid #1e1e2e",
-                marginTop: 4,
-              }}
-            >
-              <div style={{ display: "flex", alignItems: "center", gap: 6 }}>
-                <span
-                  style={{
-                    width: 8,
-                    height: 8,
-                    borderRadius: "50%",
-                    background: proj.lang,
-                    display: "inline-block",
-                  }}
-                />
-                <span style={{ color: "#6c7086", fontSize: "0.62rem", fontFamily: "'JetBrains Mono', monospace" }}>
-                  {proj.langName}
+                  ● {statusMap[proj.status].label}
                 </span>
               </div>
-              <div style={{ display: "flex", alignItems: "center", gap: 4, color: "#585b70", fontSize: "0.62rem" }}>
-                <span>⭐</span>
-                <span style={{ fontFamily: "'JetBrains Mono', monospace" }}>{proj.stars}</span>
+
+              <p
+                style={{
+                  color: "#a6adc8",
+                  fontSize: "0.72rem",
+                  lineHeight: 1.6,
+                  flexGrow: 1,
+                  margin: 0,
+                }}
+              >
+                {proj.desc}
+              </p>
+
+              <div style={{ display: "flex", gap: 6, flexWrap: "wrap", marginTop: 4 }}>
+                {proj.tags.map((tag) => (
+                  <span
+                    key={tag}
+                    style={{
+                      background: "#1e1e2e",
+                      color: "#a6adc8",
+                      fontSize: "0.58rem",
+                      padding: "3px 8px",
+                      borderRadius: 4,
+                      border: "1px solid #2a2a3d",
+                      fontFamily: "'JetBrains Mono', monospace",
+                    }}
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
+
+              <div
+                style={{
+                  display: "flex",
+                  justifyContent: "space-between",
+                  alignItems: "center",
+                  paddingTop: 10,
+                  borderTop: "1px solid #1e1e2e",
+                  marginTop: 4,
+                }}
+              >
+                <div style={{ display: "flex", alignItems: "center", gap: 6 }}>
+                  <span
+                    style={{
+                      width: 8,
+                      height: 8,
+                      borderRadius: "50%",
+                      background: proj.lang,
+                      display: "inline-block",
+                    }}
+                  />
+                  <span style={{ color: "#6c7086", fontSize: "0.62rem", fontFamily: "'JetBrains Mono', monospace" }}>
+                    {proj.langName}
+                  </span>
+                </div>
+                <div style={{ display: "flex", alignItems: "center", gap: 4, color: "#585b70", fontSize: "0.62rem" }}>
+                  <span>⭐</span>
+                  <span style={{ fontFamily: "'JetBrains Mono', monospace" }}>{proj.stars}</span>
+                </div>
               </div>
             </div>
           </div>
