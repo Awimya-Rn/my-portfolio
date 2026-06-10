@@ -32,11 +32,11 @@ const topSkills = [
 ];
 
 const certifications = [
-  { name: "Belajar Fundamental Deep Learning", issuer: "Dicoding Indonesia", color: "#89b4fa", icon: "🎖️" },
-  { name: "Algorithm & Data Structures with Python", issuer: "Dicoding Indonesia", color: "#cba6f7", icon: "🎖️" },
-  { name: "Cloud Practitioner Essentials", issuer: "Dicoding × AWS", color: "#f9e2af", icon: "☁️" },
-  { name: "Belajar Back-End dengan JavaScript", issuer: "Dicoding Indonesia", color: "#a6e3a1", icon: "🎖️" },
-  { name: "Membangun Sistem Machine Learning", issuer: "Dicoding Indonesia", color: "#94e2d5", icon: "🏆" },
+  { name: "Belajar Fundamental Deep Learning", issuer: "Dicoding Indonesia", color: "#89b4fa", icon: "🎖️", link: "https://www.dicoding.com/certificates/N9ZONY5DRXG5" },
+  { name: "Membangun Proyek Deep Learning Tingkat Mahir", issuer: "Dicoding Indonesia", color: "#cba6f7", icon: "🎖️", link: "https://www.dicoding.com/certificates/JMZVOJ563XN9" },
+  { name: "Cloud Practitioner Essentials", issuer: "Dicoding × AWS", color: "#f9e2af", icon: "☁️", link: "https://www.dicoding.com/certificates/NVP7JL43VXR0" },
+  { name: "Belajar Back-End dengan JavaScript", issuer: "Dicoding Indonesia", color: "#a6e3a1", icon: "🎖️", link: "https://www.dicoding.com/certificates/NVP7515KWXR0" },
+  { name: "Membangun Sistem Machine Learning", issuer: "Dicoding Indonesia", color: "#94e2d5", icon: "🏆", link: "https://www.dicoding.com/certificates/EYX4KN166PDL" },
 ];
 
 export default function Skills() {
@@ -201,8 +201,10 @@ export default function Skills() {
 
             <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
               {certifications.map((cert, i) => (
-                <div
+                <a
                   key={i}
+                  href={cert.link}
+                  target="_blank"
                   className="card"
                   style={{
                     padding: "12px",
@@ -214,6 +216,7 @@ export default function Skills() {
                     gap: 12,
                     borderLeft: `3px solid ${cert.color}`,
                     minWidth: 0,
+                    textDecoration: "none", 
                   }}
                 >
                   <span style={{ fontSize: "1.1rem", flexShrink: 0 }}>{cert.icon}</span>
@@ -243,7 +246,7 @@ export default function Skills() {
                       boxShadow: `0 0 6px ${cert.color}`,
                     }}
                   />
-                </div>
+                </a>
               ))}
             </div>
           </div>

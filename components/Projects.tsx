@@ -6,12 +6,13 @@ const projects = [
     desc: "A comprehensive solution designed to monitor, analyze, and predict industrial machine conditions in real-time and equipped with AI Copilot powered by Google Gemini.",
     tags: ["React", "Vite", "TypeScript", "Node.js", "Hapi.js", "Python", "Scikit-learn", "LightGBM", "Joblib", "Pandas", "PostgreSQL"],
     color: "#89b4fa",
-    lang: "#3572A5",
-    langName: "Python",
+    lang: "#F37626",
+    langName: "Jupyter Notebook",
     stars: 0,
     status: "completed",
-    icon: "Rn@",
-    image: "https://i.ibb.co.com/rf7PQNMX/image.png", 
+    icon: "~",
+    image: "https://i.ibb.co.com/rf7PQNMX/image.png",
+    link: "#", 
   },
   {
     name: "Web Laboratory for Applied Informatics",
@@ -22,8 +23,9 @@ const projects = [
     langName: "PHP",
     stars: 0,
     status: "completed",
-    icon: "Rn@",
+    icon: "~",
     image: "https://i.ibb.co.com/v4kLTFJ1/Screenshot-2026-06-08-205415.png",
+    link: "#", 
   },
   {
     name: "Magicaffeine",
@@ -34,20 +36,22 @@ const projects = [
     langName: "C#",
     stars: 0,
     status: "completed",
-    icon: "Rn@",
+    icon: "~",
     image: "https://img.itch.zone/aW1hZ2UvMzc2MDU1Ny8yMjQ4MTM4My5wbmc=/794x1000/7n7tW%2B.png",
+    link: "https://amamiyarn.itch.io/93-si-tanpa-cahaya-student-magicaffeine", 
   },
   {
     name: "Water Quality Control [Aqua Monitoring]",
     desc: "This project was selected because it provides a crucial solution that transforms passive water data into a dynamic environmental monitoring instrument.",
-    tags: ["React", "TypeScript", "Node.js", "Express.js", "Tailwindcss","Python", "PostgreSQL"],
+    tags: ["React", "TypeScript", "Node.js", "Express.js", "Tailwindcss", "Python", "PostgreSQL"],
     color: "#a6e3a1",
     lang: "#F37626",
     langName: "Jupyter Notebook",
-    stars: "-",
+    stars: "0",
     status: "completed",
-    icon: "Rn@",
+    icon: "~",
     image: "https://i.ibb.co.com/Sw5q0Bh0/Screenshot-2026-05-31-212613.png",
+    link: "https://wq-monitoring-fe.web.app/", 
   },
   {
     name: "Comming Soon",
@@ -60,6 +64,7 @@ const projects = [
     status: "wip",
     icon: "/.",
     image: "https://static.vecteezy.com/system/resources/thumbnails/071/344/857/large/error-pixel-art-glitch-animation-with-distorted-text-digital-screen-effect-video.jpg",
+    link: "#", 
   },
   {
     name: "Comming Soon",
@@ -72,6 +77,7 @@ const projects = [
     status: "wip",
     icon: "/.",
     image: "https://static.vecteezy.com/system/resources/thumbnails/071/344/857/large/error-pixel-art-glitch-animation-with-distorted-text-digital-screen-effect-video.jpg",
+    link: "#", 
   },
 ];
 
@@ -122,8 +128,11 @@ export default function Projects() {
         }}
       >
         {projects.map((proj, i) => (
-          <div
+          <a
             key={i}
+            href={proj.link}
+            target="_blank"
+            rel="noopener noreferrer"
             className="card"
             style={{
               padding: 0,
@@ -132,13 +141,12 @@ export default function Projects() {
               borderRadius: 6,
               display: "flex",
               flexDirection: "column",
-              cursor: "pointer",
               boxShadow: "0 4px 12px rgba(0,0,0,0.1)",
               minWidth: 0,
-              overflow: "hidden" 
+              overflow: "hidden",
+              textDecoration: "none", 
             }}
           >
-            {/* Bagian Gambar */}
             {proj.image && (
               <div style={{ width: "100%", height: "140px", overflow: "hidden", position: "relative" }}>
                 <img
@@ -160,7 +168,7 @@ export default function Projects() {
             <div style={{ padding: 20, display: "flex", flexDirection: "column", gap: 12, flexGrow: 1 }}>
               <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", gap: 12 }}>
                 <div style={{ display: "flex", alignItems: "center", gap: 10, minWidth: 0 }}>
-                  <span style={{ fontSize: "1.1rem", flexShrink: 0 }}>{proj.icon}</span>
+                  <span style={{ fontSize: "1.1rem", flexShrink: 0, color:"gray" }}>{proj.icon}</span>
                   <div style={{ minWidth: 0 }}>
                     <h3
                       style={{
@@ -255,7 +263,7 @@ export default function Projects() {
                 </div>
               </div>
             </div>
-          </div>
+          </a>
         ))}
       </div>
 
