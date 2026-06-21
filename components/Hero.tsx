@@ -15,6 +15,8 @@ const NEOFETCH = [
   { label: "Location", value: "Madiun, Jawa Timur, ID", color: "#cba6f7" },
   { label: "Status", value: "Available for opportunities", color: "#f9e2af" },
   { label: "College", value: "Malang State Polytechnic", color: "#cdd6f4" },
+  { label: "GPA", value: "3.80 / 4.00", color: "#94e2d5" },
+  { label: "Projects", value: "4 ", color: "#a6e3a1" },
 ];
 
 const COLORS = ["#cdd6f4", "#f9e2af", "#cba6f7", "#f38ba8", "#89b4fa", "#94e2d5"];
@@ -258,38 +260,17 @@ export default function Hero() {
               alignItems: "flex-start"
             }}
           >
-            <pre
+            <img
+              src="/hero.png"
+              alt="Profile"
               style={{
-                color: "#f9e2af",
-                fontSize: "clamp(0.35rem, 1.8vw, 0.5rem)", 
-                lineHeight: 1.1,
+                width: 130,
+                height: "auto",
+                objectFit: "cover",
+                borderRadius: 8,
                 flexShrink: 0,
-                opacity: 0.8,
-                margin: 0,
-                fontFamily: "monospace",
               }}
-            >
-{`⠀⠀⠀⠀⢷⠀⢠⢣⡏
-⠀⠀⠀⠀⢘⣷⢸⣾⣇⣶⣦⣄
-⠀⠀⠀⠀⠀⣿⣿⣿⣹⣿⣿⣷⣿⣆⣀⣀
-⠀⠀⠀⠀⠀⢼⡇⣿⣿⣽⣶⣶⣯⣭⣷⣶⣿⣿⣶
-⠀⠀⠀⠀⠀⠸⠣⢿⣿⣿⣿⣿⡿⣛⣭⣭⣭⡙⠁
-⠀⠀⠀⠀⠀⠀⠀⠸⣿⣿⣿⣿⣿⠿⠿⠿⢯⡛
-⠀⠀⠀⠀⠀⠀⠀⠀⢠⣿⣿⣿⣿⣾⣿⡿⡷⢿⡄
-⠀⠀⠀⠀⠀⠀⠀⡔⣺⣿⣿⣽⡿⣿⣿⣿⣟⡳⠦
-⠀⠀⠀⠀⠀⠀⢠⣭⣾⣿⠃⣿⡇⣿⣿⡷⢾⣭⡓
-⠀⠀⠀⠀⠀⠀⣾⣿⡿⠷⣿⣿⡇⣿⣿⣟⣻⠶⣭
-⠀⠀⠀⠀⠀⠀⣋⣵⣞⣭⣮⢿⣧⣝⣛⡛⠿⢿⣦
-⠀⣀⣀⣠⣶⣿⣿⣿⣿⡿⠟⣼⣿⡿⣟⣿⡇⠀⠙
-⡼⣿⣿⣿⢟⣿⣿⣿⣷⡿⠿⣿⣿⣿⣿⣿
-⠀⠀⠉⠁⠀⢉⣭⣭⣽⣯⣿⣿⢿⣫⣮⣅⣀
-⠀⠀⠀⠀⢀⣿⣟⣽⣿⣿⣿⣿⣾⣿⣿⣯⡛⠻⢷⣶⣤⣄⡀
-⠀⠀⠀⢀⡞⣾⣿⣿⣿⣿⡟⣿⣿⣽⣿⣿⡿⠀⠀⠀⠈⠙⠛⠿⣶⣤⣄⡀
-⠀⠀⠀⣾⣸⣿⣿⣷⣿⣿⢧⣿⣿⣿⣿⣿⣷⠁⠀⠀⠀⠀⠀⠀⠀⠈⠙⠻⢷⣦
-⠀⠀⠀⡿⣛⣛⣛⣛⣿⣿⣸⣿⣿⣿⣻⣿⣿⠆
-⠀⠀⢸⡇⣿⣿⣿⣿⣿⡏⣿⣿⣿⣿⣿⣿⣿⡇
-⠀⠀⠀⢰⣶⣶⣶⣾⣿⢃⣿⣿⣿⣿⣯⣿⣭⠁`}
-            </pre>
+            />
             <div style={{ flex: 1, minWidth: 0, fontFamily: "'JetBrains Mono', monospace" }}>
               <div style={{ fontSize: "0.7rem", marginBottom: 4 }}>
                 <span style={{ color: "#a6e3a1" }}>Rn</span>

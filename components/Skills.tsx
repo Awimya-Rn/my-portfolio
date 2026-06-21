@@ -4,32 +4,41 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faRobot, faMicrochip, faChartLine } from "@fortawesome/free-solid-svg-icons";
 
 const skills = [
-  { name: "Jupyter Notebook", color: "#F37626", cat: "Language" },
-  { name: "Python", color: "#3572A5", cat: "Language" },
-  { name: "JavaScript", color: "#f1e05a", cat: "Language" },
-  { name: "TypeScript", color: "#3178c6", cat: "Language" },
-  { name: "PHP", color: "#4f5b93", cat: "Language" },
-  { name: "Java", color: "#b07219", cat: "Language" },
-  { name: "C#", color: "#178600", cat: "Language" },
-  { name: "Scikit-learn", color: "#cba6f7", cat: "ML Framework" },
-  { name: "TensorFlow", color: "#FF6F00", cat: "ML Framework" },
-  { name: "Grafana", color: "#009393", cat: "Monitoring" },
-  { name: "Pandas", color: "#89b4fa", cat: "Data Science" },
-  { name: "NLP", color: "#94e2d5", cat: "Data Science" },
-  { name: "MLflow", color: "#a6e3a1", cat: "MLOps" },
-  { name: "Docker", color: "#fab387", cat: "DevOps" },
-  { name: "PostgreSQL", color: "#336791", cat: "Database" },
-  { name: "Node.js", color: "#68a063", cat: "Back-End" },
-  { name: "Next.js", color: "#cdd6f4", cat: "Front-End" },
-  { name: "Tailwind CSS", color: "#06b6d4", cat: "Front-End" },
-  { name: "Bootstrap", color: "#563d7c", cat: "Front-End" },
-  { name: "Unity", color: "#222C37", cat: "Game Dev" },
+  { name: "HTML5", icon: "https://cdn.simpleicons.org/html5/E34F26", cat: "Front-End" },
+  { name: "CSS", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg", cat: "Front-End" },
+  { name: "JavaScript", icon: "https://cdn.simpleicons.org/javascript/F7DF1E", cat: "Language" },
+  { name: "TypeScript", icon: "https://cdn.simpleicons.org/typescript/3178C6", cat: "Language" },
+  { name: "Python", icon: "https://cdn.simpleicons.org/python/3776AB", cat: "Language" },
+  { name: "React", icon: "https://cdn.simpleicons.org/react/61DAFB", cat: "Front-End" },
+  { name: "PHP", icon: "https://cdn.simpleicons.org/php/777BB4", cat: "Language" },
+  { name: "C++", icon: "https://cdn.simpleicons.org/cplusplus/00599C", cat: "Language" },
+  { name: "C#", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg", cat: "Language" },
+  { name: "Java", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg", cat: "Language" },
+  { name: "Jupyter Notebook", icon: "https://cdn.simpleicons.org/jupyter/F37626", cat: "Data Science" },
+  { name: "Grafana", icon: "https://cdn.simpleicons.org/grafana/F46800", cat: "Monitoring" },
+  { name: "Scikit-Learn", icon: "https://cdn.simpleicons.org/scikitlearn/F7931E", cat: "ML Framework" },
+  { name: "Pandas", icon: "https://cdn.simpleicons.org/pandas/FFFFFF", cat: "Data Science" },
+  { name: "TensorFlow", icon: "https://cdn.simpleicons.org/tensorflow/FF6F00", cat: "ML Framework" },
+  { name: "Keras", icon: "https://cdn.simpleicons.org/keras/D00000", cat: "ML Framework" },
+  { name: "Git", icon: "https://cdn.simpleicons.org/git/F05032", cat: "DevOps" },
+  { name: "GitHub", icon: "https://cdn.simpleicons.org/github/FFFFFF", cat: "DevOps" },
+  { name: "Laravel", icon: "https://cdn.simpleicons.org/laravel/FF2D20", cat: "Back-End" },
+  { name: "Bootstrap", icon: "https://cdn.simpleicons.org/bootstrap/7952B3", cat: "Front-End" },
+  { name: "MySQL", icon: "https://cdn.simpleicons.org/mysql/4479A1", cat: "Database" },
+  { name: "PostgreSQL", icon: "https://cdn.simpleicons.org/postgresql/4169E1", cat: "Database" },
+  { name: "Node.js", icon: "https://cdn.simpleicons.org/nodedotjs/339933", cat: "Back-End" },
+  { name: "Next.js", icon: "https://cdn.simpleicons.org/nextdotjs/FFFFFF", cat: "Front-End" },
+  { name: "Docker", icon: "https://cdn.simpleicons.org/docker/2496ED", cat: "DevOps" },
+  { name: "Postman", icon: "https://cdn.simpleicons.org/postman/FF6C37", cat: "Tools" },
+  { name: "Unity", icon: "https://cdn.simpleicons.org/unity/FFFFFF", cat: "Game Dev" },
+  { name: "FastAPI", icon: "https://cdn.simpleicons.org/fastapi/009688", cat: "Back-End" },
+  { name: "Flask", icon: "https://cdn.simpleicons.org/flask/FFFFFF", cat: "Back-End" }
 ];
 
 const topSkills = [
-  { name: "AI", icon: faRobot, color: "#cba6f7" },
-  { name: "TensorFlow", icon: faMicrochip, color: "#fab387" },
-  { name: "MLflow", icon: faChartLine, color: "#a6e3a1" },
+  { name: "AI", icon: "https://www.svgrepo.com/show/375528/ai-platform-unified.svg", isImage: true, color: "#cba6f7" },
+  { name: "TensorFlow", icon: "https://cdn.simpleicons.org/tensorflow/fab387", isImage: true, color: "#fab387" },
+  { name: "MLflow", icon: "https://cdn.simpleicons.org/mlflow/a6e3a1", isImage: true, color: "#a6e3a1" },
 ];
 
 const certifications = [
@@ -71,10 +80,10 @@ export default function Skills() {
           <div>
             <div style={{ marginBottom: 32 }}>
               <p style={{ color: "#585b70", fontSize: "0.65rem", letterSpacing: "0.1em", marginBottom: 12 }}>
-                # KEAHLIAN TERATAS
+                # TOP SKILL
               </p>
               <div style={{ display: "flex", gap: 8, justifyContent: "space-between" }}>
-                {topSkills.map(({ name, icon, color }) => (
+                {topSkills.map(({ name, icon, isImage, color }) => (
                   <div
                     key={name}
                     style={{
@@ -85,9 +94,18 @@ export default function Skills() {
                       borderRadius: 8,
                       textAlign: "center",
                       minWidth: 0,
+                      display: "flex",
+                      flexDirection: "column",
+                      alignItems: "center"
                     }}
                   >
-                    <div style={{ fontSize: "1.3rem", color, marginBottom: 6 }}><FontAwesomeIcon icon={icon} /></div>
+                    <div style={{ fontSize: "1.3rem", color, marginBottom: 6, display: "flex", justifyContent: "center", alignItems: "center", height: 26 }}>
+                      {isImage ? (
+                        <img src={icon as string} alt={name} style={{ width: 24, height: 24 }} />
+                      ) : (
+                        <FontAwesomeIcon icon={icon as any} />
+                      )}
+                    </div>
                     <div style={{ color: "#cdd6f4", fontSize: "0.7rem", fontWeight: 700 }}>{name}</div>
                   </div>
                 ))}
@@ -99,7 +117,7 @@ export default function Skills() {
                 # TECH STACK LIST
               </p>
               <div style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>
-                {skills.map(({ name, color, cat }) => (
+                {skills.map(({ name, icon, cat }) => (
                   <div
                     key={name}
                     style={{
@@ -112,13 +130,12 @@ export default function Skills() {
                       borderRadius: 6,
                     }}
                   >
-                    <div
+                    <img
+                      src={icon}
+                      alt={name}
                       style={{
-                        width: 5,
-                        height: 5,
-                        borderRadius: "50%",
-                        background: color,
-                        boxShadow: `0 0 6px ${color}`,
+                        width: 14,
+                        height: 14,
                         flexShrink: 0,
                       }}
                     />
