@@ -55,7 +55,7 @@ export default function Hero() {
         position: "relative",
         overflow: "hidden",
         backgroundColor: "#0a0a0c",
-        backgroundImage: `linear-gradient(rgba(20, 20, 25, 0.75), rgba(20, 20, 25, 0.75)), url('https://images2.alphacoders.com/987/thumb-1920-987174.jpg')`, 
+        backgroundImage: `linear-gradient(rgba(20, 20, 25, 0.75), rgba(20, 20, 25, 0.75)), url('https://i.ibb.co.com/9HdXwVkH/image.png')`, 
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}
@@ -261,7 +261,7 @@ export default function Hero() {
             }}
           >
             <img
-              src="/hero.png"
+              src="https://i.ibb.co.com/qYgdsPsY/image.png"
               alt="Profile"
               style={{
                 width: 130,

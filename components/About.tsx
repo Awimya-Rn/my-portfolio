@@ -109,7 +109,7 @@ export default function About() {
             },
             {
               label: "location",
-              value: "Madiun, Jawa Timur",
+              value: "Malang & Madiun, East Java",
               sub: "Indonesia 🇮🇩",
               color: "#f9e2af",
               icon: faLocationDot,
