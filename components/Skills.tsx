@@ -9,7 +9,6 @@ const skills = [
   { name: "JavaScript", icon: "https://cdn.simpleicons.org/javascript/F7DF1E", cat: "Language" },
   { name: "TypeScript", icon: "https://cdn.simpleicons.org/typescript/3178C6", cat: "Language" },
   { name: "Python", icon: "https://cdn.simpleicons.org/python/3776AB", cat: "Language" },
-  { name: "React", icon: "https://cdn.simpleicons.org/react/61DAFB", cat: "Front-End" },
   { name: "PHP", icon: "https://cdn.simpleicons.org/php/777BB4", cat: "Language" },
   { name: "C++", icon: "https://cdn.simpleicons.org/cplusplus/00599C", cat: "Language" },
   { name: "C#", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg", cat: "Language" },
@@ -22,8 +21,9 @@ const skills = [
   { name: "Keras", icon: "https://cdn.simpleicons.org/keras/D00000", cat: "ML Framework" },
   { name: "Git", icon: "https://cdn.simpleicons.org/git/F05032", cat: "DevOps" },
   { name: "GitHub", icon: "https://cdn.simpleicons.org/github/FFFFFF", cat: "DevOps" },
-  { name: "Laravel", icon: "https://cdn.simpleicons.org/laravel/FF2D20", cat: "Back-End" },
+  { name: "React", icon: "https://cdn.simpleicons.org/react/61DAFB", cat: "Front-End" },
   { name: "Bootstrap", icon: "https://cdn.simpleicons.org/bootstrap/7952B3", cat: "Front-End" },
+  { name: "Laravel", icon: "https://cdn.simpleicons.org/laravel/FF2D20", cat: "Back-End" },
   { name: "MySQL", icon: "https://cdn.simpleicons.org/mysql/4479A1", cat: "Database" },
   { name: "PostgreSQL", icon: "https://cdn.simpleicons.org/postgresql/4169E1", cat: "Database" },
   { name: "Node.js", icon: "https://cdn.simpleicons.org/nodedotjs/339933", cat: "Back-End" },
@@ -36,9 +36,9 @@ const skills = [
 ];
 
 const topSkills = [
-  { name: "AI", icon: "https://www.svgrepo.com/show/375528/ai-platform-unified.svg", isImage: true, color: "#cba6f7" },
-  { name: "TensorFlow", icon: "https://cdn.simpleicons.org/tensorflow/fab387", isImage: true, color: "#fab387" },
-  { name: "MLflow", icon: "https://cdn.simpleicons.org/mlflow/a6e3a1", isImage: true, color: "#a6e3a1" },
+  { name: "AI", icon: "https://cdn-icons-png.flaticon.com/512/9732/9732753.png", isImage: true, color: "#cba6f7" },
+  { name: "Machine Learning", icon: "https://cdn-icons-png.flaticon.com/512/4616/4616734.png", isImage: true, color: "#fab387" },
+  { name: "Back-End", icon: "https://cdn-icons-png.flaticon.com/512/4922/4922612.png", isImage: true, color: "#a6e3a1" },
 ];
 
 const certifications = [

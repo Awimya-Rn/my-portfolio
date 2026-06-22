@@ -15,7 +15,7 @@ const NEOFETCH = [
   { label: "Location", value: "Madiun, Jawa Timur, ID", color: "#cba6f7" },
   { label: "Status", value: "Available for opportunities", color: "#f9e2af" },
   { label: "College", value: "Malang State Polytechnic", color: "#cdd6f4" },
-  { label: "GPA", value: "3.80 / 4.00", color: "#94e2d5" },
+  { label: "GPA", value: "3.64 / 4.00", color: "#94e2d5" },
   { label: "Projects", value: "4 ", color: "#a6e3a1" },
 ];
 
@@ -200,10 +200,14 @@ export default function Hero() {
             {[
               { label: "$ view projects", href: "#projects", accent: "#a6e3a1" },
               { label: "$ contact me", href: "#contact", accent: "#89b4fa" },
-            ].map(({ label, href, accent }) => (
+              { label: "$ download cv", href: "/CV.pdf", accent: "#f9e2af", download: true },
+            ].map(({ label, href, accent, download }) => (
               <a
                 key={label}
                 href={href}
+                download={download ? true : undefined}
+                target={download ? "_blank" : undefined}
+                rel={download ? "noopener noreferrer" : undefined}
                 style={{
                   display: "inline-block",
                   padding: "10px 18px", 
