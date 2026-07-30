@@ -12,7 +12,7 @@ const NEOFETCH = [
   { label: "OS", value: "Windows 11 & Arch Linux x86_64", color: "#89b4fa" },
   { label: "Shell", value: "zsh 5.9", color: "#a6e3a1" },
   { label: "Role", value: "AI Engineer / ML Enthusiast", color: "#f38ba8" },
-  { label: "Location", value: "Madiun, Jawa Timur, ID", color: "#cba6f7" },
+  { label: "Location", value: "Malang, Jawa Timur, ID", color: "#cba6f7" },
   { label: "Status", value: "Available for opportunities", color: "#f9e2af" },
   { label: "College", value: "Malang State Polytechnic", color: "#cdd6f4" },
   { label: "GPA", value: "3.64 / 4.00", color: "#94e2d5" },
@@ -55,7 +55,7 @@ export default function Hero() {
         position: "relative",
         overflow: "hidden",
         backgroundColor: "#0a0a0c",
-        backgroundImage: `linear-gradient(rgba(20, 20, 25, 0.75), rgba(20, 20, 25, 0.75)), url('https://i.ibb.co.com/9HdXwVkH/image.png')`, 
+        backgroundImage: `linear-gradient(rgba(20, 20, 25, 0.75), rgba(20, 20, 25, 0.75)), url('https://images6.alphacoders.com/933/thumb-1920-933824.png')`, 
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}
@@ -265,7 +265,7 @@ export default function Hero() {
             }}
           >
             <img
-              src="https://i.ibb.co.com/qYgdsPsY/image.png"
+              src="https://i.ibb.co.com/Y7t2x5m3/images.png"
               alt="Profile"
               style={{
                 width: 130,
