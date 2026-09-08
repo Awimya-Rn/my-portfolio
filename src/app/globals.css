@@ -1,0 +1,122 @@
+@import "tailwindcss";
+
+/* ===== Catppuccin Mocha Theme ===== */
+@theme inline {
+  /* Base colors */
+  --color-ctp-crust: #11111b;
+  --color-ctp-mantle: #181825;
+  --color-ctp-base: #1e1e2e;
+  --color-ctp-surface0: #313244;
+  --color-ctp-surface1: #45475a;
+  --color-ctp-surface2: #585b70;
+
+  /* Text colors */
+  --color-ctp-text: #cdd6f4;
+  --color-ctp-subtext0: #a6adc8;
+  --color-ctp-overlay0: #6c7086;
+  --color-ctp-overlay1: #7f849c;
+
+  /* Accent colors */
+  --color-ctp-blue: #89b4fa;
+  --color-ctp-green: #a6e3a1;
+  --color-ctp-mauve: #cba6f7;
+  --color-ctp-red: #f38ba8;
+  --color-ctp-yellow: #f9e2af;
+  --color-ctp-teal: #94e2d5;
+  --color-ctp-peach: #fab387;
+  --color-ctp-pink: #f5c2e7;
+  --color-ctp-sky: #89dcfe;
+  --color-ctp-lavender: #b4befe;
+
+  /* Font */
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, "SF Mono",
+    Menlo, Consolas, "Liberation Mono", monospace;
+}
+
+/* ===== Global Styles ===== */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-ctp-surface1) var(--color-ctp-crust);
+}
+
+*::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+*::-webkit-scrollbar-track {
+  background: var(--color-ctp-crust);
+}
+*::-webkit-scrollbar-thumb {
+  background: var(--color-ctp-surface1);
+  border-radius: 3px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-ctp-crust);
+  color: var(--color-ctp-text);
+  font-family: var(--font-mono);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background: var(--color-ctp-blue);
+  color: var(--color-ctp-crust);
+}
+
+/* ===== Noise overlay ===== */
+.noise-overlay {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.025;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+}
+
+/* ===== Scanline effect ===== */
+.scanline {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9998;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0, 0, 0, 0.03) 2px,
+    rgba(0, 0, 0, 0.03) 4px
+  );
+}
+
+/* ===== Blinking cursor animation ===== */
+@keyframes blink {
+  0%,
+  50% {
+    opacity: 1;
+  }
+  51%,
+  100% {
+    opacity: 0;
+  }
+}
+
+/* ===== Line clamp utility ===== */
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
