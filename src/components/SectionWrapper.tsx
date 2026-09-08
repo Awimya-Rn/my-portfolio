@@ -19,12 +19,12 @@ export default function SectionWrapper({
   return (
     <motion.section
       id={id}
-      initial={{ opacity: 0, x: 80 }}
-      whileInView={{ opacity: 1, x: 0 }}
-      viewport={{ once: true, margin: "-100px" }}
+      initial={index === 0 ? { opacity: 1, y: 0 } : { opacity: 0, y: 24 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.05 }}
       transition={{
-        duration: 0.6,
-        delay: index * 0.05,
+        duration: 0.5,
+        delay: index === 0 ? 0 : 0.1,
         ease: [0.25, 0.46, 0.45, 0.94],
       }}
       className={className}
@@ -33,3 +33,4 @@ export default function SectionWrapper({
     </motion.section>
   );
 }
+
