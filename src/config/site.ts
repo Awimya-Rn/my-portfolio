@@ -28,7 +28,7 @@ export const siteConfig = {
       gpa: '3.64 / 4.00',
       projects: '4',
     },
-    profileImage: 'https://i.ibb.co.com/Y7t2x5m3/images.png',
+    profileImage: '/images/image.png',
     cvPath: '/CV.pdf',
   },
 
