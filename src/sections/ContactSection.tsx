@@ -270,13 +270,6 @@ export default function ContactSection() {
             className="mt-4 p-4 rounded-lg border border-dashed border-ctp-surface0 text-center"
           >
             <p className="text-ctp-overlay0 text-[0.65rem] font-mono">
-              Built with{" "}
-              <span className="text-ctp-red">♥</span> using{" "}
-              <span className="text-ctp-text">Next.js</span>,{" "}
-              <span className="text-ctp-blue">TypeScript</span> &{" "}
-              <span className="text-ctp-teal">Tailwind CSS</span>
-            </p>
-            <p className="text-ctp-overlay0/60 text-[0.55rem] font-mono mt-1">
               © 2026 Mokhammad Ilham Putra Wijaya
             </p>
           </motion.div>

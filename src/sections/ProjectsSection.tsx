@@ -46,7 +46,7 @@ export default function ProjectsSection() {
           # 03 — projects
         </p>
         <h2 className="text-xl md:text-2xl font-bold text-ctp-text tracking-tight">
-          <span className="text-ctp-blue">~/</span>repositories
+          <span className="text-ctp-blue">~/</span>Projects
         </h2>
         <div className="font-mono text-[0.68rem] text-ctp-overlay0 mt-3 overflow-x-auto whitespace-nowrap pb-1">
           <span className="text-ctp-green">❯ </span>

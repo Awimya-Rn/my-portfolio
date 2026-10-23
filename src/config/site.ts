@@ -3,7 +3,7 @@ export const siteConfig = {
     title: 'Mokhammad Ilham | Portfolio',
     description:
       'Mokhammad Ilham Putra Wijaya — Informatics Engineering Student & ML/AI Enthusiast',
-    url: 'https://mokhlhm.vercel.app',
+    url: 'https://mokhlhm.my.id',
   },
 
   personal: {
@@ -20,20 +20,19 @@ export const siteConfig = {
     ],
     neofetch: {
       os: 'Windows 11',
-      shell: 'zsh 5.9',
       role: 'AI Engineer / ML Enthusiast',
       location: 'Malang, Jawa Timur, ID',
       status: 'Available for opportunities',
       college: 'Malang State Polytechnic',
       gpa: '3.64 / 4.00',
-      projects: '4',
+      projects: '3',
     },
     profileImage: '/images/image.png',
     cvPath: '/CV.pdf',
   },
 
   // ===== CHANGE THIS URL TO SWAP THE HERO BACKGROUND =====
-  heroBackground: 'https://images6.alphacoders.com/933/thumb-1920-933824.png',
+  heroBackground: 'https://preview.redd.it/id-say-wallpaper-worthy-i-love-this-game-2nd-time-playing-v0-ia06yhm2qx3e1.jpeg?width=1080&crop=smart&auto=webp&s=d37c134429d1b0d72dfdbfb509624941109c9eea',
 
   about: {
     bio: `I am a fifth semester undergraduate student of the D4 Informatics
@@ -69,7 +68,7 @@ logical, data-driven approaches to create impactful solutions.`,
       {
         label: 'focus',
         title: 'Machine Learning & AI Engineering',
-        subtitle: 'Back-End Dev • Python • JavaScript',
+        subtitle: 'Python • JavaScript',
         color: 'mauve',
         icon: 'Bot',
       },
@@ -90,12 +89,12 @@ logical, data-driven approaches to create impactful solutions.`,
       organization: 'Coding Camp powered by DBS Foundation',
       location: '',
       startDate: 'February 2026',
-      endDate: 'Present',
-      duration: '4 months',
+      endDate: 'July 2026',
+      duration: '6 months',
       badge: '🏅 Distinction Graduation',
       description:
-        'National Certified Independent Study organized by Dicoding powered by DBS Foundation. Over five months, I studied about main concepts and applications of Artificial Engineering, data processing with Python, and the application of AI algorithms to technology-based industries.',
-      tags: ['AI Engineering', 'Machine Learning', 'Deep Learning'],
+        'National Certified Independent Study organized by Dicoding powered by DBS Foundation. I completed an intensive 6-month curriculum focused on the application of artificial intelligence (AI) and machine learning. During the program, I utilized Python to process and analyze datasets and built robust data pipelines. Furthermore, I applied AI and machine learning algorithms to solve challenges based on real-world industry case studies.',
+      tags: ['AI Engineering', 'Machine Learning', 'Deep Learning', 'Python', 'Data Pipelines', 'Real-World Industry Case Studies'],
       color: 'blue',
       icon: 'Bot',
     },
@@ -109,15 +108,8 @@ logical, data-driven approaches to create impactful solutions.`,
       duration: '6 months',
       badge: '🏅 Distinction Graduation',
       description:
-        'Experience building unsupervised learning (Clustering) models to segment and discover hidden patterns in datasets. Successfully developed end-to-end Sentiment Analysis projects, applying Natural Language Processing (NLP) techniques to classify text data. Proficient in data preprocessing, feature engineering, and model evaluation using tools such as Python, Scikit-learn, and Pandas.',
-      tags: [
-        'Python',
-        'Machine Learning',
-        'Scikit-learn',
-        'NLP',
-        'Pandas',
-        'TensorFlow',
-      ],
+        'Certified Independent Study organized by Dicoding in association with Accenture. This 6-month intensive program focused on the application of artificial intelligence (AI) and machine learning. I utilized Python to process and prepare datasets, as well as to perform predictive modeling and analysis. Furthermore, using real-world industry case studies, I built, trained, and evaluated machine learning models.',
+      tags: ['Machine Learning', 'AI Engineering', 'Python', 'Data Processing', 'Predictive Modeling', 'Real-World Industry Case Studies'],
       color: 'mauve',
       icon: 'Brain',
     },
@@ -136,28 +128,13 @@ logical, data-driven approaches to create impactful solutions.`,
       color: 'green',
       icon: 'Users',
     },
-    {
-      title: 'Mentee',
-      type: 'Mentee',
-      organization: 'Workshop Riset Informatika',
-      location: 'Malang, East Java',
-      startDate: 'September 2024',
-      endDate: 'June 2025',
-      duration: '10 Months',
-      badge: '',
-      description:
-        'Deepened understanding of Java and OOP concepts as a strong foundation for informatics studies. Learned fundamentals of back-end development using PHP for server logic and SQL for database management.',
-      tags: ['Java', 'OOP', 'PHP', 'SQL', 'Back-End'],
-      color: 'yellow',
-      icon: 'UserCheck',
-    },
   ],
 
   projects: [
     {
       title: 'Predictive Maintenance',
       description:
-        'A comprehensive solution designed to monitor, analyze, and predict equipment failures before they occur. Uses machine learning models trained on sensor data to identify patterns that indicate potential breakdowns, enabling proactive maintenance scheduling.',
+        'This is a capstone project from a bootcamp at Asah, led by Dicoding. The project involves developing a comprehensive solution designed to monitor, analyze, and predict equipment failures before they occur. The solution utilizes machine learning models trained on sensor data to identify patterns indicative of potential malfunctions, thereby enabling proactive maintenance scheduling.',
       image: 'https://i.ibb.co.com/rf7PQNMX/image.png',
       status: 'completed',
       tags: [
@@ -177,19 +154,29 @@ logical, data-driven approaches to create impactful solutions.`,
       image:
         'https://img.itch.zone/aW1hZ2UvMzc2MDU1Ny8yMjQ4MTM4My5wbmc=/794x1000/7n7tW%2B.png',
       status: 'completed',
-      tags: ['Unity', 'C#', 'Game Development', '2D', 'Pixel Art'],
+      tags: [
+        'Unity', 
+        'C#', 
+        'Game Development'
+      ],
       liveUrl: 'https://github.com/mokhlhm',
-      color: 'green',
+      color: 'mauve',
     },
     {
       title: 'Monitor Water Quality Detect Anomalies Earlier',
       description:
-        'A full-stack web application for managing academic records, course scheduling, and student data. Built with Laravel and MySQL, featuring role-based authentication, RESTful API, and a responsive admin dashboard.',
+        'This is the final project for a bootcamp organized by Coding Camp, powered by the DBS Foundation. The platform monitors water quality in estuarine zones in real-time by transforming historical data into a dynamic stream of information. It is designed for the early detection of ecological crises and for testing anomaly detection models, all without the need for physical hardware.',
       image: 'https://i.ibb.co.com/Sw5q0Bh0/Screenshot-2026-05-31-212613.png',
       status: 'completed',
-      tags: ['Laravel', 'PHP', 'MySQL', 'Bootstrap', 'REST API'],
+      tags: [
+        'Python',
+        'Scikit-learn',
+        'Pandas',
+        'Machine Learning',
+        'Data Analysis',
+      ],
       liveUrl: 'https://wq-monitoring-fe.web.app',
-      color: 'red',
+      color: 'green',
     },
   ],
 
@@ -217,15 +204,9 @@ logical, data-driven approaches to create impactful solutions.`,
           name: 'Python',
           icon: 'https://cdn.simpleicons.org/python/3776AB',
         },
-        { name: 'PHP', icon: 'https://cdn.simpleicons.org/php/777BB4' },
-        { name: 'C++', icon: 'https://cdn.simpleicons.org/cplusplus/00599C' },
         {
-          name: 'C#',
-          icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg',
-        },
-        {
-          name: 'Java',
-          icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg',
+          name: 'PHP',
+          icon: 'https://cdn.simpleicons.org/php/777BB4',
         },
       ],
     },
@@ -271,16 +252,24 @@ logical, data-driven approaches to create impactful solutions.`,
           name: 'Postman',
           icon: 'https://cdn.simpleicons.org/postman/FF6C37',
         },
+        {
+          name: 'Antigravity',
+          icon: 'https://cdn.jsdelivr.net/gh/selfhst/icons/png/google-antigravity.png',
+        },
+        {
+          name: 'Vs Code',
+          icon: 'https://cdn.jsdelivr.net/gh/selfhst/icons/png/visual-studio-code.png',
+        },
+        {
+          name: 'Google Colab',
+          icon: 'https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/google-colab.png',
+        }
       ],
     },
     frameworks: {
       label: '# frameworks',
       items: [
         { name: 'React', icon: 'https://cdn.simpleicons.org/react/61DAFB' },
-        {
-          name: 'Bootstrap',
-          icon: 'https://cdn.simpleicons.org/bootstrap/7952B3',
-        },
         {
           name: 'Laravel',
           icon: 'https://cdn.simpleicons.org/laravel/FF2D20',
@@ -298,7 +287,6 @@ logical, data-driven approaches to create impactful solutions.`,
           icon: 'https://cdn.simpleicons.org/fastapi/009688',
         },
         { name: 'Flask', icon: 'https://cdn.simpleicons.org/flask/FFFFFF' },
-        { name: 'Unity', icon: 'https://cdn.simpleicons.org/unity/FFFFFF' },
       ],
     },
     databases: {
@@ -318,43 +306,37 @@ logical, data-driven approaches to create impactful solutions.`,
       title: 'Machine Learning - Distinction',
       issuer: 'Asah by Dicoding × Accenture',
       image:
-        'https://cdn.iconscout.com/icon/premium/png-512-thumb/brain-icon-svg-download-png-15211047.png',
+        'https://i.ibb.co.com/bgcKpDc1/Screenshot-2026-10-23-151442.png',
     },
     {
       title: 'AI Engineering - Distinction',
       issuer: 'Coding Camp - DBS Foundation',
       image:
-        'https://cdn.iconscout.com/icon/premium/png-512-thumb/ai-brain-icon-svg-download-png-15211058.png',
+        'https://i.ibb.co.com/JFnJfYrs/Code-Symbol-Lightbulb-Icon.png',
     },
     {
-      title: 'Learning Generative AI Fundamentals',
+      title: 'Building Machine Learning Systems',
       issuer: 'Dicoding',
       image:
-        'https://cdn.iconscout.com/icon/premium/png-512-thumb/video-rendering-engine-icon-svg-download-png-15158145.png',
+        'https://framerusercontent.com/images/ekmXxrpNGB1Iaxax4qJwCKIFi0.png',
     },
     {
       title: 'Building Advanced-Level Deep Learning Projects',
       issuer: 'Dicoding',
       image:
-        'https://cdn.iconscout.com/icon/premium/png-512-thumb/ai-neural-network-icon-svg-download-png-15211049.png',
+        'https://framerusercontent.com/images/yoWpUvZ8B1u7G1Kfzm8Br3hSCn0.png',
     },
     {
       title: 'Learning Generative AI Fundamentals',
       issuer: 'Dicoding',
       image:
-        'https://cdn.iconscout.com/icon/premium/png-512-thumb/video-rendering-engine-icon-svg-download-png-15158145.png',
-    },
-    {
-      title: 'Learning Generative AI Fundamentals',
-      issuer: 'Dicoding',
-      image:
-        'https://cdn.iconscout.com/icon/premium/png-512-thumb/video-rendering-engine-icon-svg-download-png-15158145.png',
-    },
+        'https://framerusercontent.com/images/V8CunibUEjEWr29fX2wWRwzck.png',
+    }
   ],
 
   socialLinks: {
-    email: 'mailto:mokhlhm@gmail.com',
-    github: 'https://github.com/mokhlhm',
+    email: 'mailto:mokhamm20@gmail.com',
+    github: 'https://github.com/Awimya-Rn',
     linkedin: 'https://www.linkedin.com/in/hamm-ez/',
     instagram: 'https://instagram.com/mokhlhm',
   },

@@ -51,7 +51,6 @@ export default function HeroSection() {
 
   const neofetchEntries: { label: string; value: string; color: string }[] = [
     { label: "OS", value: nf.os, color: "text-ctp-blue" },
-    { label: "Shell", value: nf.shell, color: "text-ctp-green" },
     { label: "Role", value: nf.role, color: "text-ctp-red" },
     { label: "Location", value: nf.location, color: "text-ctp-mauve" },
     { label: "Status", value: nf.status, color: "text-ctp-yellow" },
@@ -70,7 +69,7 @@ export default function HeroSection() {
       <div
         className="absolute inset-0 bg-cover bg-center"
         style={{
-          backgroundImage: `linear-gradient(rgba(17,17,27,0.78), rgba(17,17,27,0.78)), url('${heroBackground}')`,
+          backgroundImage: `linear-gradient(rgba(17,17,27,0.60), rgba(17,17,27,0.60)), url('${heroBackground}')`,
         }}
       />
       {/* Grid overlay */}
@@ -174,7 +173,7 @@ export default function HeroSection() {
                 download
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block px-4 py-2.5 border border-ctp-yellow text-ctp-yellow text-[0.7rem] rounded font-mono tracking-wide hover:bg-ctp-yellow/10 transition-all"
+                className="inline-block px-4 py-2.5 border border-ctp-red text-ctp-red text-[0.7rem] rounded font-mono tracking-wide hover:bg-ctp-red/10 transition-all"
               >
                 $ download cv
               </a>

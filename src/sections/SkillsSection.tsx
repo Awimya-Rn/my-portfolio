@@ -16,14 +16,6 @@ const categoryOrder: SkillCategory[] = [
   "databases",
 ];
 
-const categoryIcons: Record<string, string> = {
-  languages: "💻",
-  mlDataScience: "🧠",
-  devTools: "🔧",
-  frameworks: "⚡",
-  databases: "🗄️",
-};
-
 export default function SkillsSection() {
   const [activeCategory, setActiveCategory] = useState<SkillCategory>("languages");
   const [mobileSidebarOpen, setMobileSidebarOpen] = useState(false);
@@ -54,7 +46,7 @@ export default function SkillsSection() {
           <div className="px-4 py-3 border-b border-ctp-surface0 bg-ctp-crust/80 flex items-center justify-between">
             <div className="flex items-center gap-2">
               <div className="w-8 h-8 rounded-full bg-gradient-to-br from-ctp-mauve to-ctp-blue flex items-center justify-center text-[0.7rem] font-bold text-ctp-crust">
-                IL
+                <img className="object-contain rounded-full" src="/images/skill.png" alt="img" />
               </div>
               <div>
                 <div className="text-ctp-text text-[0.8rem] font-semibold">
@@ -159,7 +151,6 @@ export default function SkillsSection() {
                   {activeSkills.label.replace("# ", "")}
                 </span>
                 <span className="text-ctp-overlay0 text-[0.6rem]">
-                  {categoryIcons[activeCategory]}{" "}
                   {activeSkills.items.length} technologies
                 </span>
               </div>
