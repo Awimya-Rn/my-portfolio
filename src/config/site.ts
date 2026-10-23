@@ -28,7 +28,7 @@ export const siteConfig = {
       projects: '3',
     },
     profileImage: '/images/image.png',
-    cvPath: '/CV.pdf',
+    cvPath: 'CV/CV.pdf',
   },
 
   // ===== CHANGE THIS URL TO SWAP THE HERO BACKGROUND =====
