@@ -32,21 +32,28 @@ export const siteConfig = {
   },
 
   // ===== CHANGE THIS URL TO SWAP THE HERO BACKGROUND =====
-  heroBackground: 'https://preview.redd.it/id-say-wallpaper-worthy-i-love-this-game-2nd-time-playing-v0-ia06yhm2qx3e1.jpeg?width=1080&crop=smart&auto=webp&s=d37c134429d1b0d72dfdbfb509624941109c9eea',
+  heroBackground:
+    'https://preview.redd.it/id-say-wallpaper-worthy-i-love-this-game-2nd-time-playing-v0-ia06yhm2qx3e1.jpeg?width=1080&crop=smart&auto=webp&s=d37c134429d1b0d72dfdbfb509624941109c9eea',
 
   about: {
-    bio: `I am a fifth semester undergraduate student of the D4 Informatics
-Engineering program at Malang State Polytechnic, driven by a strong
-ambition to grow and excel in the field of technology.
+    bio: `I am a fifth-semester D4 Informatics Engineering student at State Polytechnic of Malang and graduate of Dicoding’s Asah and CodingCamp programs, specializing in Machine Learning and AI. 
 
-Currently enrolled in Asah by Dicoding — focus: Machine Learning,
-strengthening my analytical and problem-solving skills.
+Strong in analytical thinking and problem-solving, with a focus on building efficient, data-driven technological solutions.
 
 Actively expanding expertise in:`,
     expertise: [
-      { text: 'Back-End Development (JavaScript & Python)', color: 'blue' },
-      { text: 'Machine Learning & AI Systems', color: 'mauve' },
-      { text: 'Data-driven problem solving', color: 'green' },
+      {
+        text: 'Data Analysis & Data Science.',
+        color: 'blue',
+      },
+      {
+        text: 'Machine Learning & AI Engineering.',
+        color: 'mauve',
+      },
+      {
+        text: 'Data Engineering & Back-End Systems.',
+        color: 'green',
+      },
     ],
     bioClosing: `Passionate about building efficient, reliable systems and applying
 logical, data-driven approaches to create impactful solutions.`,
@@ -94,7 +101,14 @@ logical, data-driven approaches to create impactful solutions.`,
       badge: '🏅 Distinction Graduation',
       description:
         'National Certified Independent Study organized by Dicoding powered by DBS Foundation. I completed an intensive 6-month curriculum focused on the application of artificial intelligence (AI) and machine learning. During the program, I utilized Python to process and analyze datasets and built robust data pipelines. Furthermore, I applied AI and machine learning algorithms to solve challenges based on real-world industry case studies.',
-      tags: ['AI Engineering', 'Machine Learning', 'Deep Learning', 'Python', 'Data Pipelines', 'Real-World Industry Case Studies'],
+      tags: [
+        'AI Engineering',
+        'Machine Learning',
+        'Deep Learning',
+        'Python',
+        'Data Pipelines',
+        'Real-World Industry Case Studies',
+      ],
       color: 'blue',
       icon: 'Bot',
     },
@@ -109,7 +123,14 @@ logical, data-driven approaches to create impactful solutions.`,
       badge: '🏅 Distinction Graduation',
       description:
         'Certified Independent Study organized by Dicoding in association with Accenture. This 6-month intensive program focused on the application of artificial intelligence (AI) and machine learning. I utilized Python to process and prepare datasets, as well as to perform predictive modeling and analysis. Furthermore, using real-world industry case studies, I built, trained, and evaluated machine learning models.',
-      tags: ['Machine Learning', 'AI Engineering', 'Python', 'Data Processing', 'Predictive Modeling', 'Real-World Industry Case Studies'],
+      tags: [
+        'Machine Learning',
+        'AI Engineering',
+        'Python',
+        'Data Processing',
+        'Predictive Modeling',
+        'Real-World Industry Case Studies',
+      ],
       color: 'mauve',
       icon: 'Brain',
     },
@@ -144,7 +165,7 @@ logical, data-driven approaches to create impactful solutions.`,
         'Machine Learning',
         'Data Analysis',
       ],
-      liveUrl: 'https://github.com/mokhlhm',
+      liveUrl: 'https://github.com/Awimya-Rn',
       color: 'blue',
     },
     {
@@ -154,12 +175,9 @@ logical, data-driven approaches to create impactful solutions.`,
       image:
         'https://img.itch.zone/aW1hZ2UvMzc2MDU1Ny8yMjQ4MTM4My5wbmc=/794x1000/7n7tW%2B.png',
       status: 'completed',
-      tags: [
-        'Unity', 
-        'C#', 
-        'Game Development'
-      ],
-      liveUrl: 'https://github.com/mokhlhm',
+      tags: ['Unity', 'C#', 'Game Development'],
+      liveUrl:
+        'https://amamiyarn.itch.io/93-si-tanpa-cahaya-student-magicaffeine',
       color: 'mauve',
     },
     {
@@ -263,7 +281,7 @@ logical, data-driven approaches to create impactful solutions.`,
         {
           name: 'Google Colab',
           icon: 'https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/google-colab.png',
-        }
+        },
       ],
     },
     frameworks: {
@@ -305,14 +323,12 @@ logical, data-driven approaches to create impactful solutions.`,
     {
       title: 'Machine Learning - Distinction',
       issuer: 'Asah by Dicoding × Accenture',
-      image:
-        'https://i.ibb.co.com/bgcKpDc1/Screenshot-2026-10-23-151442.png',
+      image: 'https://i.ibb.co.com/bgcKpDc1/Screenshot-2026-10-23-151442.png',
     },
     {
       title: 'AI Engineering - Distinction',
       issuer: 'Coding Camp - DBS Foundation',
-      image:
-        'https://i.ibb.co.com/JFnJfYrs/Code-Symbol-Lightbulb-Icon.png',
+      image: 'https://i.ibb.co.com/JFnJfYrs/Code-Symbol-Lightbulb-Icon.png',
     },
     {
       title: 'Building Machine Learning Systems',
@@ -331,7 +347,7 @@ logical, data-driven approaches to create impactful solutions.`,
       issuer: 'Dicoding',
       image:
         'https://framerusercontent.com/images/V8CunibUEjEWr29fX2wWRwzck.png',
-    }
+    },
   ],
 
   socialLinks: {
