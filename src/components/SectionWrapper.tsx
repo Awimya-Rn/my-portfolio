@@ -16,6 +16,14 @@ export default function SectionWrapper({
   className = "",
   index,
 }: SectionWrapperProps) {
+  // Hero (index 0) keeps its own image background & layout.
+  // Other sections alternate: dark (crust) <-> slightly lighter black.
+  const isHero = index === 0;
+  const tone =
+    index % 2 === 1
+      ? "bg-ctp-crust"
+      : "bg-section-alt border-y border-ctp-surface0/40";
+
   return (
     <motion.section
       id={id}
@@ -27,9 +35,9 @@ export default function SectionWrapper({
         delay: index === 0 ? 0 : 0.1,
         ease: [0.25, 0.46, 0.45, 0.94],
       }}
-      className={className}
+      className={isHero ? className : `w-full ${tone}`}
     >
-      {children}
+      {isHero ? children : <div className={className}>{children}</div>}
     </motion.section>
   );
 }

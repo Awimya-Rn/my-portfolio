@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { siteConfig } from "@/config/site";
+import ThemeToggle from "@/components/ThemeToggle";
 
 const navItems = [
   { id: "hero", label: "~", index: 1 },
@@ -156,14 +157,17 @@ export default function Taskbar() {
             ))}
           </div>
 
-          {/* Right: mobile toggle */}
-          <button
-            onClick={() => setMobileOpen(!mobileOpen)}
-            className="md:hidden text-ctp-text text-sm hover:text-ctp-blue transition-colors px-2 py-1 border border-ctp-surface0 rounded"
-            aria-label="Toggle Menu"
-          >
-            {mobileOpen ? "[×]" : "[≡]"}
-          </button>
+          {/* Right: theme toggle + mobile menu toggle */}
+          <div className="flex items-center gap-2">
+            <ThemeToggle />
+            <button
+              onClick={() => setMobileOpen(!mobileOpen)}
+              className="md:hidden text-ctp-text text-sm hover:text-ctp-blue transition-colors px-2 py-1 border border-ctp-surface0 rounded"
+              aria-label="Toggle Menu"
+            >
+              {mobileOpen ? "[×]" : "[≡]"}
+            </button>
+          </div>
         </div>
 
         {/* Mobile menu */}

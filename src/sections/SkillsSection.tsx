@@ -4,7 +4,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { siteConfig } from "@/config/site";
 import SectionWrapper from "@/components/SectionWrapper";
-import { Hash, Award, ChevronDown } from "lucide-react";
+import { Hash, Award, ChevronDown, ExternalLink } from "lucide-react";
 
 type SkillCategory = keyof typeof siteConfig.skills;
 
@@ -27,7 +27,7 @@ export default function SkillsSection() {
     <SectionWrapper
       id="skills"
       index={4}
-      className="py-16 md:py-20 px-4 bg-ctp-crust border-y border-ctp-surface0"
+      className="py-16 md:py-20 px-4"
     >
       <div className="max-w-6xl mx-auto">
         {/* Header */}
@@ -195,30 +195,59 @@ export default function SkillsSection() {
                   </span>
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-                  {certifications.map((cert, i) => (
-                    <motion.div
-                      key={i}
-                      initial={{ opacity: 0, y: 15 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ delay: i * 0.1 }}
-                      className="flex items-center gap-3 p-3 rounded-lg bg-ctp-crust/60 border border-ctp-surface0 hover:border-ctp-yellow/20 transition-colors"
-                    >
-                      <img
-                        src={cert.image}
-                        alt={cert.title}
-                        className="w-10 h-10 object-contain flex-shrink-0 rounded"
-                      />
-                      <div className="min-w-0">
-                        <div className="text-ctp-text text-[0.72rem] font-semibold truncate">
-                          {cert.title}
+                  {certifications.map((cert, i) => {
+                    const hasLink = Boolean(cert.url);
+                    const baseClass =
+                      "flex items-center gap-3 p-3 rounded-lg bg-ctp-crust/60 border border-ctp-surface0 transition-colors";
+                    const motionProps = {
+                      initial: { opacity: 0, y: 15 },
+                      whileInView: { opacity: 1, y: 0 },
+                      viewport: { once: true },
+                      transition: { delay: i * 0.1 },
+                    };
+                    const content = (
+                      <>
+                        <img
+                          src={cert.image}
+                          alt={cert.title}
+                          className="w-10 h-10 object-contain flex-shrink-0 rounded"
+                        />
+                        <div className="min-w-0 flex-1">
+                          <div className="text-ctp-text text-[0.72rem] font-semibold truncate">
+                            {cert.title}
+                          </div>
+                          <div className="text-ctp-overlay0 text-[0.6rem] truncate">
+                            {cert.issuer}
+                          </div>
                         </div>
-                        <div className="text-ctp-overlay0 text-[0.6rem] truncate">
-                          {cert.issuer}
-                        </div>
-                      </div>
-                    </motion.div>
-                  ))}
+                        {hasLink && (
+                          <ExternalLink className="w-3.5 h-3.5 flex-shrink-0 text-ctp-overlay0 group-hover:text-ctp-yellow transition-colors" />
+                        )}
+                      </>
+                    );
+
+                    return hasLink ? (
+                      <motion.a
+                        key={i}
+                        href={cert.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label={`View certificate: ${cert.title}`}
+                        {...motionProps}
+                        className={`${baseClass} group cursor-pointer hover:border-ctp-yellow/50 hover:bg-ctp-surface0/40`}
+                      >
+                        {content}
+                      </motion.a>
+                    ) : (
+                      <motion.div
+                        key={i}
+                        {...motionProps}
+                        className={`${baseClass} hover:border-ctp-yellow/20`}
+                      >
+                        {content}
+                      </motion.div>
+                    );
+                  })}
                 </div>
               </div>
             </div>

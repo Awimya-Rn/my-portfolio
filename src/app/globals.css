@@ -1,33 +1,102 @@
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
 @import "tailwindcss";
 
-/* ===== Catppuccin Mocha Theme ===== */
+/* ===== Theme palettes =====
+   Dark  = Catppuccin Mocha (default)
+   Light = Catppuccin Latte (colors inverted so "crust" is always the
+           page background and "surface" always stands out from it)      */
+:root {
+  color-scheme: dark;
+
+  --ctp-crust: #11111b;
+  --ctp-mantle: #181825;
+  --ctp-base: #1e1e2e;
+  --ctp-surface0: #313244;
+  --ctp-surface1: #45475a;
+  --ctp-surface2: #585b70;
+
+  --ctp-text: #cdd6f4;
+  --ctp-subtext0: #a6adc8;
+  --ctp-overlay0: #6c7086;
+  --ctp-overlay1: #7f849c;
+
+  --ctp-blue: #89b4fa;
+  --ctp-green: #a6e3a1;
+  --ctp-mauve: #cba6f7;
+  --ctp-red: #f38ba8;
+  --ctp-yellow: #f9e2af;
+  --ctp-teal: #94e2d5;
+  --ctp-peach: #fab387;
+  --ctp-pink: #f5c2e7;
+  --ctp-sky: #89dcfe;
+  --ctp-lavender: #b4befe;
+
+  /* Alternating section background (the "slightly lighter black") */
+  --section-alt: #1a1a27;
+  /* Hero image overlay + grid lines */
+  --hero-overlay: rgba(17, 17, 27, 0.6);
+  --hero-grid: rgba(30, 30, 46, 0.4);
+}
+
+html[data-theme="light"] {
+  color-scheme: light;
+
+  --ctp-crust: #eff1f5;
+  --ctp-mantle: #e6e9ef;
+  --ctp-base: #dce0e8;
+  --ctp-surface0: #ccd0da;
+  --ctp-surface1: #bcc0cc;
+  --ctp-surface2: #acb0be;
+
+  --ctp-text: #4c4f69;
+  --ctp-subtext0: #6c6f85;
+  --ctp-overlay0: #8c8fa1;
+  --ctp-overlay1: #7c7f93;
+
+  --ctp-blue: #1e66f5;
+  --ctp-green: #40a02b;
+  --ctp-mauve: #8839ef;
+  --ctp-red: #d20f39;
+  --ctp-yellow: #df8e1d;
+  --ctp-teal: #179299;
+  --ctp-peach: #fe640b;
+  --ctp-pink: #ea76cb;
+  --ctp-sky: #04a5e5;
+  --ctp-lavender: #7287fd;
+
+  --section-alt: #e4e7ee;
+  --hero-overlay: rgba(239, 241, 245, 0.82);
+  --hero-grid: rgba(172, 176, 190, 0.35);
+}
+
 @theme inline {
   /* Base colors */
-  --color-ctp-crust: #11111b;
-  --color-ctp-mantle: #181825;
-  --color-ctp-base: #1e1e2e;
-  --color-ctp-surface0: #313244;
-  --color-ctp-surface1: #45475a;
-  --color-ctp-surface2: #585b70;
+  --color-ctp-crust: var(--ctp-crust);
+  --color-ctp-mantle: var(--ctp-mantle);
+  --color-ctp-base: var(--ctp-base);
+  --color-ctp-surface0: var(--ctp-surface0);
+  --color-ctp-surface1: var(--ctp-surface1);
+  --color-ctp-surface2: var(--ctp-surface2);
 
   /* Text colors */
-  --color-ctp-text: #cdd6f4;
-  --color-ctp-subtext0: #a6adc8;
-  --color-ctp-overlay0: #6c7086;
-  --color-ctp-overlay1: #7f849c;
+  --color-ctp-text: var(--ctp-text);
+  --color-ctp-subtext0: var(--ctp-subtext0);
+  --color-ctp-overlay0: var(--ctp-overlay0);
+  --color-ctp-overlay1: var(--ctp-overlay1);
 
   /* Accent colors */
-  --color-ctp-blue: #89b4fa;
-  --color-ctp-green: #a6e3a1;
-  --color-ctp-mauve: #cba6f7;
-  --color-ctp-red: #f38ba8;
-  --color-ctp-yellow: #f9e2af;
-  --color-ctp-teal: #94e2d5;
-  --color-ctp-peach: #fab387;
-  --color-ctp-pink: #f5c2e7;
-  --color-ctp-sky: #89dcfe;
-  --color-ctp-lavender: #b4befe;
+  --color-ctp-blue: var(--ctp-blue);
+  --color-ctp-green: var(--ctp-green);
+  --color-ctp-mauve: var(--ctp-mauve);
+  --color-ctp-red: var(--ctp-red);
+  --color-ctp-yellow: var(--ctp-yellow);
+  --color-ctp-teal: var(--ctp-teal);
+  --color-ctp-peach: var(--ctp-peach);
+  --color-ctp-pink: var(--ctp-pink);
+  --color-ctp-sky: var(--ctp-sky);
+  --color-ctp-lavender: var(--ctp-lavender);
+
+  --color-section-alt: var(--section-alt);
 
   /* Font */
   --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, "SF Mono",
@@ -57,6 +126,7 @@ html {
 }
 
 body {
+  transition: background-color 0.3s ease, color 0.3s ease;
   background: var(--color-ctp-crust);
   color: var(--color-ctp-text);
   font-family: var(--font-mono);
@@ -120,4 +190,53 @@ body {
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
+}
+
+/* ===== Theme toggle icons (pure CSS, no flicker) ===== */
+.theme-icon-light {
+  display: none;
+}
+html[data-theme="light"] .theme-icon-light {
+  display: inline;
+}
+html[data-theme="light"] .theme-icon-dark {
+  display: none;
+}
+
+/* Lighter CRT effects in light mode */
+html[data-theme="light"] .noise-overlay {
+  opacity: 0.015;
+}
+html[data-theme="light"] .scanline {
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0, 0, 0, 0.015) 2px,
+    rgba(0, 0, 0, 0.015) 4px
+  );
+}
+
+/* ===== Boot screen ===== */
+html[data-boot="running"] {
+  overflow: hidden;
+}
+html[data-boot="done"] .boot-screen {
+  display: none;
+}
+/* Failsafe: never trap a visitor if the intro script fails */
+.boot-screen {
+  animation: boot-failsafe 0.4s ease 15s forwards;
+}
+@keyframes boot-failsafe {
+  to {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+  }
+}
+
+/* Navbar slides down once the boot intro is over */
+html[data-boot="running"] nav {
+  transform: translateY(-110%);
 }

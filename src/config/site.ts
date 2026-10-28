@@ -324,36 +324,41 @@ logical, data-driven approaches to create impactful solutions.`,
       title: 'Machine Learning - Distinction',
       issuer: 'Asah by Dicoding × Accenture',
       image: 'https://i.ibb.co.com/bgcKpDc1/Screenshot-2026-10-23-151442.png',
+      url: 'https://media.licdn.com/dms/image/v2/D562DAQGAJMq0iJ7xNQ/profile-treasury-document-images_1280/B56Z8OB.X8HIAg-/1/1782646828263?e=1793836800&v=beta&t=mB4bCqoLr_nJEKiqFAB7Xoi74ubmZDPSIv5slH0lfGE',
     },
     {
       title: 'AI Engineering - Distinction',
       issuer: 'Coding Camp - DBS Foundation',
       image: 'https://i.ibb.co.com/JFnJfYrs/Code-Symbol-Lightbulb-Icon.png',
+      url: 'https://media.licdn.com/dms/image/v2/D562DAQGwJI_laSCGIA/profile-treasury-document-images_1280/B56aGBsrAoH0Ag-/1/1793177335541?e=1793836800&v=beta&t=cE3onOJhyFJ2ZaHTWawW7upXgwLjX4GTq8WrFm1m1cs',
     },
     {
       title: 'Building Machine Learning Systems',
       issuer: 'Dicoding',
       image:
         'https://framerusercontent.com/images/ekmXxrpNGB1Iaxax4qJwCKIFi0.png',
+      url: 'https://www.dicoding.com/certificates/EYX4KN166PDL',
     },
     {
       title: 'Building Advanced-Level Deep Learning Projects',
       issuer: 'Dicoding',
       image:
         'https://framerusercontent.com/images/yoWpUvZ8B1u7G1Kfzm8Br3hSCn0.png',
+      url: 'https://www.dicoding.com/certificates/N9ZONY5DRXG5',
     },
     {
       title: 'Learning Generative AI Fundamentals',
       issuer: 'Dicoding',
       image:
         'https://framerusercontent.com/images/V8CunibUEjEWr29fX2wWRwzck.png',
+      url: 'https://www.dicoding.com/certificates/6RPN7E5G4X2M',
     },
   ],
 
   socialLinks: {
     email: 'mailto:mokhamm20@gmail.com',
     github: 'https://github.com/Awimya-Rn',
-    linkedin: 'https://www.linkedin.com/in/hamm-ez/',
+    linkedin: 'https://linkedin.com/in/hamm-ez/',
     instagram: 'https://instagram.com/mokhlhm',
   },
 }

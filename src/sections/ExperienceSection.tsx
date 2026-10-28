@@ -46,7 +46,7 @@ export default function ExperienceSection() {
     <SectionWrapper
       id="experience"
       index={2}
-      className="py-16 md:py-20 px-4 bg-ctp-crust border-y border-ctp-surface0"
+      className="py-16 md:py-20 px-4"
     >
       <div className="max-w-6xl mx-auto">
         {/* Header */}
