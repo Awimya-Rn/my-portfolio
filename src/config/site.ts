@@ -165,13 +165,13 @@ logical, data-driven approaches to create impactful solutions.`,
         'Machine Learning',
         'Data Analysis',
       ],
-      liveUrl: 'https://github.com/Awimya-Rn',
+      liveUrl: '',
       color: 'blue',
     },
     {
       title: 'Magicaffeine',
       description:
-        'A 2D action-adventure game built with Unity and C#. Features procedurally generated dungeons, pixel art graphics, enemy AI with pathfinding, and an inventory system. Developed as a passion project to explore game development fundamentals.',
+        "You were a coffee-loving barista in your previous life, but now you've been thrown into a fantasy world. Determined to bring real coffee to this strange world, you decide to open your own coffee shop. The game was aimed at GameSeed 2025; mixes the real-life experience of being a barista with the nostalgic feel of early 2000s pixel games.",
       image:
         'https://img.itch.zone/aW1hZ2UvMzc2MDU1Ny8yMjQ4MTM4My5wbmc=/794x1000/7n7tW%2B.png',
       status: 'completed',
@@ -195,6 +195,17 @@ logical, data-driven approaches to create impactful solutions.`,
       ],
       liveUrl: 'https://wq-monitoring-fe.web.app',
       color: 'green',
+    },
+    {
+      title: 'CORDS AI / Fish Measurement',
+      description:
+        "Development of a computer vision-based prototype for object detection and the exploration of fish length measurement using visual references. This project focuses on utilizing image processing technology to identify objects and explore the automated estimation of fish size. The development process is currently ongoing, encompassing the testing of various approaches, refinement of the prototype, and evaluation of results to enhance the system's accuracy and reliability.",
+      image:
+        'https://cdn-ilamall.nitrocdn.com/QOEsVmmUwSFekSYNyTHChjbypgSaeCqv/assets/images/optimized/rev-2d271a1/fishbio.com/wp-content/uploads/2023/07/8161866318_c761b7e151_c.jpg',
+      status: 'ongoing',
+      tags: ['Python', 'Data Engineering', 'Computer Vision'],
+      liveUrl: '',
+      color: 'red',
     },
   ],
 

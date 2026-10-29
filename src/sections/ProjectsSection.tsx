@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { siteConfig } from "@/config/site";
+import { useLanguage } from "@/i18n/LanguageProvider";
 import SectionWrapper from "@/components/SectionWrapper";
 import { ExternalLink, X } from "lucide-react";
 
@@ -20,19 +20,13 @@ const colorTextMap: Record<string, string> = {
   red: "text-ctp-red",
 };
 
-interface Project {
-  title: string;
-  description: string;
-  image: string;
-  status: string;
-  tags: string[];
-  liveUrl: string;
-  color: string;
-}
-
 export default function ProjectsSection() {
-  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
-  const { projects } = siteConfig;
+  // Store the index (not the object) so the open modal follows language changes
+  const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
+  const { content, t } = useLanguage();
+  const { projects } = content;
+  const selectedProject =
+    selectedIndex !== null ? projects[selectedIndex] : null;
 
   return (
     <SectionWrapper
@@ -43,10 +37,10 @@ export default function ProjectsSection() {
       {/* Header */}
       <div className="mb-8">
         <p className="text-ctp-overlay0 text-[0.7rem] font-mono tracking-widest uppercase mb-1">
-          # 03 — projects
+          {t.projects.eyebrow}
         </p>
         <h2 className="text-xl md:text-2xl font-bold text-ctp-text tracking-tight">
-          <span className="text-ctp-blue">~/</span>Projects
+          <span className="text-ctp-blue">~/</span>{t.projects.title}
         </h2>
         <div className="font-mono text-[0.68rem] text-ctp-overlay0 mt-3 overflow-x-auto whitespace-nowrap pb-1">
           <span className="text-ctp-green">❯ </span>
@@ -64,7 +58,7 @@ export default function ProjectsSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.4, delay: i * 0.1 }}
-            onClick={() => setSelectedProject(project)}
+            onClick={() => setSelectedIndex(i)}
             className={`text-left rounded-lg bg-ctp-mantle/80 border border-ctp-surface0 ${colorMap[project.color]} border-t-2 overflow-hidden hover:border-ctp-surface1 transition-all hover:shadow-lg hover:shadow-black/20 group cursor-pointer`}
           >
             {/* Thumbnail */}
@@ -126,7 +120,7 @@ export default function ProjectsSection() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             className="fixed inset-0 z-[200] flex items-center justify-center p-4 bg-black/70 backdrop-blur-sm"
-            onClick={() => setSelectedProject(null)}
+            onClick={() => setSelectedIndex(null)}
           >
             <motion.div
               initial={{ opacity: 0, scale: 0.9, y: 30 }}
@@ -141,18 +135,18 @@ export default function ProjectsSection() {
                 <div className="flex items-center gap-2">
                   <div className="flex gap-1.5">
                     <button
-                      onClick={() => setSelectedProject(null)}
+                      onClick={() => setSelectedIndex(null)}
                       className="w-2.5 h-2.5 rounded-full bg-ctp-red hover:brightness-110 transition"
                     />
                     <div className="w-2.5 h-2.5 rounded-full bg-ctp-yellow" />
                     <div className="w-2.5 h-2.5 rounded-full bg-ctp-green" />
                   </div>
                   <span className="text-ctp-overlay0 text-[0.65rem] font-mono ml-1">
-                    project — {selectedProject.title.toLowerCase()}
+                    {t.projects.modalTitle} — {selectedProject.title.toLowerCase()}
                   </span>
                 </div>
                 <button
-                  onClick={() => setSelectedProject(null)}
+                  onClick={() => setSelectedIndex(null)}
                   className="text-ctp-overlay0 hover:text-ctp-text transition-colors p-1"
                 >
                   <X className="w-4 h-4" />
@@ -182,7 +176,7 @@ export default function ProjectsSection() {
                   {/* Tech stack */}
                   <div className="mb-5">
                     <h4 className="text-ctp-overlay0 text-[0.65rem] font-mono tracking-widest uppercase mb-2">
-                      Tech Stack
+                      {t.projects.techStack}
                     </h4>
                     <div className="flex gap-2 flex-wrap">
                       {selectedProject.tags.map((tag) => (
@@ -206,7 +200,7 @@ export default function ProjectsSection() {
                         className="flex items-center gap-2 px-5 py-2.5 bg-ctp-blue/15 text-ctp-blue text-[0.78rem] font-bold rounded-lg border border-ctp-blue/30 hover:bg-ctp-blue/25 transition-all font-mono shadow-sm"
                       >
                         <ExternalLink className="w-4 h-4" />
-                        $ visit project
+                        {t.projects.visit}
                       </a>
                     )}
                   </div>

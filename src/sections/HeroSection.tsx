@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { motion, type Variants } from "framer-motion";
-import { siteConfig } from "@/config/site";
+import { useLanguage } from "@/i18n/LanguageProvider";
 import TerminalWindow from "@/components/TerminalWindow";
 import SectionWrapper from "@/components/SectionWrapper";
 
@@ -119,17 +119,18 @@ export default function HeroSection() {
     return () => clearInterval(blink);
   }, []);
 
-  const { personal, heroBackground } = siteConfig;
+  const { content, t } = useLanguage();
+  const { personal, heroBackground } = content;
   const nf = personal.neofetch;
 
   const neofetchEntries: { label: string; value: string; color: string }[] = [
     { label: "OS", value: nf.os, color: "text-ctp-blue" },
-    { label: "Role", value: nf.role, color: "text-ctp-red" },
-    { label: "Location", value: nf.location, color: "text-ctp-mauve" },
+    { label: t.hero.nf.role, value: nf.role, color: "text-ctp-red" },
+    { label: t.hero.nf.location, value: nf.location, color: "text-ctp-mauve" },
     { label: "Status", value: nf.status, color: "text-ctp-yellow" },
-    { label: "College", value: nf.college, color: "text-ctp-text" },
-    { label: "GPA", value: nf.gpa, color: "text-ctp-teal" },
-    { label: "Projects", value: nf.projects, color: "text-ctp-green" },
+    { label: t.hero.nf.college, value: nf.college, color: "text-ctp-text" },
+    { label: t.hero.nf.gpa, value: nf.gpa, color: "text-ctp-teal" },
+    { label: t.hero.nf.projects, value: nf.projects, color: "text-ctp-green" },
   ];
 
   return (
@@ -248,7 +249,7 @@ export default function HeroSection() {
                   }}
                   className="inline-block px-4 py-2.5 border border-ctp-green text-ctp-green text-[0.7rem] rounded font-mono tracking-wide hover:bg-ctp-green/10 transition-all cursor-pointer"
                 >
-                  $ view projects
+                  {t.hero.viewProjects}
                 </button>
               </motion.div>
               <motion.div variants={fadeUp}>
@@ -263,7 +264,7 @@ export default function HeroSection() {
                   }}
                   className="inline-block px-4 py-2.5 border border-ctp-blue text-ctp-blue text-[0.7rem] rounded font-mono tracking-wide hover:bg-ctp-blue/10 transition-all cursor-pointer"
                 >
-                  $ contact me
+                  {t.hero.contactMe}
                 </button>
               </motion.div>
               <motion.div variants={fadeUp}>
@@ -274,7 +275,7 @@ export default function HeroSection() {
                   rel="noopener noreferrer"
                   className="inline-block px-4 py-2.5 border border-ctp-red text-ctp-red text-[0.7rem] rounded font-mono tracking-wide hover:bg-ctp-red/10 transition-all"
                 >
-                  $ download cv
+                  {t.hero.downloadCv}
                 </a>
               </motion.div>
             </motion.div>

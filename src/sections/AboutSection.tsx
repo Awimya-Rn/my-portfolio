@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { siteConfig } from "@/config/site";
+import { useLanguage } from "@/i18n/LanguageProvider";
 import TerminalWindow from "@/components/TerminalWindow";
 import SectionWrapper from "@/components/SectionWrapper";
 import {
@@ -48,7 +48,8 @@ const expertiseColors: Record<string, string> = {
 };
 
 export default function AboutSection() {
-  const { about } = siteConfig;
+  const { content, t } = useLanguage();
+  const { about } = content;
 
   return (
     <SectionWrapper
@@ -59,10 +60,10 @@ export default function AboutSection() {
       {/* Section header */}
       <div className="mb-8">
         <p className="text-ctp-overlay0 text-[0.7rem] font-mono tracking-widest uppercase mb-1">
-          # 01 — about
+          {t.about.eyebrow}
         </p>
         <h2 className="text-xl md:text-2xl font-bold text-ctp-text tracking-tight">
-          <span className="text-ctp-green">./</span>about_me
+          <span className="text-ctp-green">./</span>{t.about.title}
         </h2>
       </div>
 

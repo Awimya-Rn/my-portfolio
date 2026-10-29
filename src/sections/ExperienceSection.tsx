@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { siteConfig } from "@/config/site";
+import { useLanguage } from "@/i18n/LanguageProvider";
 import SectionWrapper from "@/components/SectionWrapper";
 import { Bot, Brain, Users, UserCheck } from "lucide-react";
 
@@ -40,7 +40,8 @@ const colorMap: Record<string, { text: string; border: string; glow: string; bad
 };
 
 export default function ExperienceSection() {
-  const { experiences } = siteConfig;
+  const { content, t } = useLanguage();
+  const { experiences } = content;
 
   return (
     <SectionWrapper
@@ -52,10 +53,10 @@ export default function ExperienceSection() {
         {/* Header */}
         <div className="mb-8">
           <p className="text-ctp-overlay0 text-[0.7rem] font-mono tracking-widest uppercase mb-1">
-            # 02 — experience
+            {t.experience.eyebrow}
           </p>
           <h2 className="text-xl md:text-2xl font-bold text-ctp-text tracking-tight">
-            <span className="text-ctp-mauve">./</span>work_experience
+            <span className="text-ctp-mauve">./</span>{t.experience.title}
           </h2>
         </div>
 

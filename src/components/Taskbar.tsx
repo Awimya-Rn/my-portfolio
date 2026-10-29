@@ -3,7 +3,9 @@
 import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { siteConfig } from "@/config/site";
+import { useLanguage } from "@/i18n/LanguageProvider";
 import ThemeToggle from "@/components/ThemeToggle";
+import LanguageToggle from "@/components/LanguageToggle";
 
 const navItems = [
   { id: "hero", label: "~", index: 1 },
@@ -14,7 +16,14 @@ const navItems = [
   { id: "contact", label: "contact", index: 6 },
 ];
 
+type NavKey = "about" | "experience" | "projects" | "skills" | "contact";
+
 export default function Taskbar() {
+  const { t } = useLanguage();
+  const items = navItems.map((n) => ({
+    ...n,
+    label: n.id === "hero" ? "~" : t.nav[n.id as NavKey],
+  }));
   const [activeSection, setActiveSection] = useState("hero");
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -58,8 +67,8 @@ export default function Taskbar() {
     const targetEl = document.getElementById(targetId);
     if (!targetEl) return;
 
-    const fromLabel = navItems.find((n) => n.id === activeSection)?.label || "~";
-    const toLabel = navItems.find((n) => n.id === targetId)?.label || targetId;
+    const fromLabel = items.find((n) => n.id === activeSection)?.label || "~";
+    const toLabel = items.find((n) => n.id === targetId)?.label || targetId;
 
     // Show Workspace Switch Notification
     setSwitchingNotice({ from: fromLabel, to: toLabel, indexTo });
@@ -130,7 +139,7 @@ export default function Taskbar() {
 
           {/* Center: desktop nav as workspace buttons */}
           <div className="hidden md:flex items-center gap-1.5">
-            {navItems.map((item) => (
+            {items.map((item) => (
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id, item.index)}
@@ -159,6 +168,7 @@ export default function Taskbar() {
 
           {/* Right: theme toggle + mobile menu toggle */}
           <div className="flex items-center gap-2">
+            <LanguageToggle />
             <ThemeToggle />
             <button
               onClick={() => setMobileOpen(!mobileOpen)}
@@ -183,7 +193,7 @@ export default function Taskbar() {
               <div className="text-[0.6rem] text-ctp-overlay0 mb-2 pb-2 border-b border-dashed border-ctp-surface0">
                 ❯ cat links.txt
               </div>
-              {navItems.map((item) => (
+              {items.map((item) => (
                 <button
                   key={item.id}
                   onClick={() => scrollToSection(item.id, item.index)}

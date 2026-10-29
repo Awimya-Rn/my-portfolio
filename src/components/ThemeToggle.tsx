@@ -1,6 +1,9 @@
 "use client";
 
+import { useLanguage } from "@/i18n/LanguageProvider";
 export default function ThemeToggle() {
+  const { t } = useLanguage();
+
   const toggle = () => {
     const root = document.documentElement;
     const next = root.getAttribute("data-theme") === "light" ? "dark" : "light";
@@ -17,8 +20,8 @@ export default function ThemeToggle() {
       type="button"
       onClick={toggle}
       className="text-ctp-text text-sm hover:text-ctp-blue transition-colors px-2 py-1 border border-ctp-surface0 rounded cursor-pointer font-mono"
-      aria-label="Toggle light/dark mode"
-      title="Toggle light/dark mode"
+      aria-label={t.toggleTheme}
+      title={t.toggleTheme}
     >
       <span className="theme-icon-dark">[☾]</span>
       <span className="theme-icon-light">[☀]</span>

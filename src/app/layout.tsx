@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { siteConfig } from "@/config/site";
 import BootScreen from "@/components/BootScreen";
+import { LanguageProvider } from "@/i18n/LanguageProvider";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -51,7 +52,7 @@ export default function RootLayout({
         {/* CRT effects */}
         <div className="noise-overlay" />
         <div className="scanline" />
-        {children}
+        <LanguageProvider>{children}</LanguageProvider>
       </body>
     </html>
   );

@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { siteConfig } from "@/config/site";
+import { useLanguage } from "@/i18n/LanguageProvider";
 import SectionWrapper from "@/components/SectionWrapper";
 import TerminalWindow from "@/components/TerminalWindow";
 import { Mail, Send, Loader2 } from "lucide-react";
@@ -44,6 +45,7 @@ const socialItems = [
 ];
 
 export default function ContactSection() {
+  const { t, lang } = useLanguage();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -61,7 +63,7 @@ export default function ContactSection() {
     try {
       const res = await fetch("/api/contact", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: { "Content-Type": "application/json", "X-Lang": lang },
         body: JSON.stringify(formData),
       });
 
@@ -77,7 +79,7 @@ export default function ContactSection() {
       }
     } catch {
       setStatus("error");
-      setStatusMessage("Network error. Please try again.");
+      setStatusMessage(t.contact.networkError);
     }
 
     setTimeout(() => setStatus("idle"), 5000);
@@ -95,10 +97,10 @@ export default function ContactSection() {
       {/* Header */}
       <div className="mb-8">
         <p className="text-ctp-overlay0 text-[0.7rem] font-mono tracking-widest uppercase mb-1">
-          # 05 — contact
+          {t.contact.eyebrow}
         </p>
         <h2 className="text-xl md:text-2xl font-bold text-ctp-text tracking-tight">
-          <span className="text-ctp-red">./</span>reach_out
+          <span className="text-ctp-red">./</span>{t.contact.title}
         </h2>
       </div>
 
@@ -131,7 +133,7 @@ export default function ContactSection() {
 
               <div>
                 <label className="text-ctp-blue text-[0.65rem] font-mono block mb-1">
-                  name:
+                  {t.contact.name}
                 </label>
                 <input
                   type="text"
@@ -140,14 +142,14 @@ export default function ContactSection() {
                   maxLength={100}
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                  placeholder="Your name"
+                  placeholder={t.contact.placeholderName}
                   className={inputClasses}
                 />
               </div>
 
               <div>
                 <label className="text-ctp-green text-[0.65rem] font-mono block mb-1">
-                  email:
+                  {t.contact.email}
                 </label>
                 <input
                   type="email"
@@ -155,28 +157,28 @@ export default function ContactSection() {
                   maxLength={200}
                   value={formData.email}
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                  placeholder="your@email.com"
+                  placeholder={t.contact.placeholderEmail}
                   className={inputClasses}
                 />
               </div>
 
               <div>
                 <label className="text-ctp-yellow text-[0.65rem] font-mono block mb-1">
-                  subject:
+                  {t.contact.subject}
                 </label>
                 <input
                   type="text"
                   maxLength={200}
                   value={formData.subject}
                   onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
-                  placeholder="What's this about?"
+                  placeholder={t.contact.placeholderSubject}
                   className={inputClasses}
                 />
               </div>
 
               <div>
                 <label className="text-ctp-mauve text-[0.65rem] font-mono block mb-1">
-                  message:
+                  {t.contact.message}
                 </label>
                 <textarea
                   required
@@ -185,7 +187,7 @@ export default function ContactSection() {
                   rows={4}
                   value={formData.message}
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                  placeholder="Your message..."
+                  placeholder={t.contact.placeholderMessage}
                   className={`${inputClasses} resize-none`}
                 />
               </div>
@@ -200,7 +202,7 @@ export default function ContactSection() {
                 ) : (
                   <Send className="w-3.5 h-3.5" />
                 )}
-                {status === "loading" ? "Sending..." : "$ send_message"}
+                {status === "loading" ? t.contact.sending : t.contact.send}
               </button>
 
               {status === "success" && (

@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { siteConfig } from "@/config/site";
+import { useLanguage } from "@/i18n/LanguageProvider";
 import SectionWrapper from "@/components/SectionWrapper";
 import { Hash, Award, ChevronDown, ExternalLink } from "lucide-react";
 
@@ -19,7 +20,8 @@ const categoryOrder: SkillCategory[] = [
 export default function SkillsSection() {
   const [activeCategory, setActiveCategory] = useState<SkillCategory>("languages");
   const [mobileSidebarOpen, setMobileSidebarOpen] = useState(false);
-  const { skills, certifications } = siteConfig;
+  const { content, t } = useLanguage();
+  const { skills, certifications } = content;
 
   const activeSkills = skills[activeCategory];
 
@@ -33,7 +35,7 @@ export default function SkillsSection() {
         {/* Header */}
         <div className="mb-8">
           <p className="text-ctp-overlay0 text-[0.7rem] font-mono tracking-widest uppercase mb-1">
-            # 04 — skills
+            {t.skills.eyebrow}
           </p>
           <h2 className="text-xl md:text-2xl font-bold text-ctp-text tracking-tight">
             <span className="text-ctp-teal">./</span>tech_stack
@@ -50,11 +52,13 @@ export default function SkillsSection() {
               </div>
               <div>
                 <div className="text-ctp-text text-[0.8rem] font-semibold">
-                  Ilham&apos;s Tech Stack
+                  {t.skills.serverName}
                 </div>
                 <div className="text-ctp-green text-[0.55rem] flex items-center gap-1">
                   <span className="w-1.5 h-1.5 rounded-full bg-ctp-green inline-block" />
-                  Online — {Object.values(skills).reduce((acc, cat) => acc + cat.items.length, 0)} skills loaded
+                  {t.skills.online(
+                    Object.values(skills).reduce((acc, cat) => acc + cat.items.length, 0),
+                  )}
                 </div>
               </div>
             </div>
@@ -107,7 +111,7 @@ export default function SkillsSection() {
             {/* Sidebar (desktop) */}
             <div className="hidden md:block w-56 border-r border-ctp-surface0 bg-ctp-crust/40 p-2 flex-shrink-0">
               <div className="text-ctp-overlay0 text-[0.6rem] uppercase tracking-widest px-2 py-1.5 font-semibold">
-                Skill Channels
+                {t.skills.channels}
               </div>
               {categoryOrder.map((key) => (
                 <button
@@ -130,11 +134,11 @@ export default function SkillsSection() {
               {/* Certifications link */}
               <div className="mt-4 pt-3 border-t border-ctp-surface0">
                 <div className="text-ctp-overlay0 text-[0.6rem] uppercase tracking-widest px-2 py-1.5 font-semibold">
-                  Achievements
+                  {t.skills.achievements}
                 </div>
                 <div className="flex items-center gap-2 px-2.5 py-2 text-ctp-yellow text-[0.75rem] font-mono">
                   <Award className="w-4 h-4 opacity-80" />
-                  <span>certifications</span>
+                  <span>{t.skills.certificationsLower}</span>
                   <span className="ml-auto text-[0.55rem] text-ctp-overlay0 bg-ctp-surface0 px-1.5 py-0.5 rounded-full">
                     {certifications.length}
                   </span>
@@ -151,7 +155,7 @@ export default function SkillsSection() {
                   {activeSkills.label.replace("# ", "")}
                 </span>
                 <span className="text-ctp-overlay0 text-[0.6rem]">
-                  {activeSkills.items.length} technologies
+                  {t.skills.technologies(activeSkills.items.length)}
                 </span>
               </div>
 
@@ -191,7 +195,7 @@ export default function SkillsSection() {
                 <div className="flex items-center gap-2 mb-4">
                   <Award className="w-4 h-4 text-ctp-yellow" />
                   <span className="text-ctp-text text-[0.8rem] font-semibold">
-                    Certifications
+                    {t.skills.certifications}
                   </span>
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
@@ -232,7 +236,7 @@ export default function SkillsSection() {
                         href={cert.url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        aria-label={`View certificate: ${cert.title}`}
+                        aria-label={`${t.skills.viewCertificate}: ${cert.title}`}
                         {...motionProps}
                         className={`${baseClass} group cursor-pointer hover:border-ctp-yellow/50 hover:bg-ctp-surface0/40`}
                       >
