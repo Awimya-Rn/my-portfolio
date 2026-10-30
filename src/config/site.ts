@@ -113,7 +113,7 @@ logical, data-driven approaches to create impactful solutions.`,
       icon: 'Bot',
     },
     {
-      title: 'Machine Learning Cohort',
+      title: 'Machine Learning',
       type: 'Cohort',
       organization: 'Asah led by Dicoding × Accenture',
       location: '',
@@ -135,13 +135,13 @@ logical, data-driven approaches to create impactful solutions.`,
       icon: 'Brain',
     },
     {
-      title: 'Mentor',
+      title: 'Miniclass Backend Development',
       type: 'Mentor',
       organization: 'Workshop Riset Informatika',
       location: 'Malang, East Java',
       startDate: 'September 2025',
-      endDate: 'June 2026',
-      duration: '10 Months',
+      endDate: 'Present',
+      // duration: '10 Months',
       badge: '',
       description:
         'Actively guided mentees in understanding informatics fundamentals. Provided Java and OOP concepts to prepare mentees for academic challenges. Shared practical tips and tricks to hone programming logic and problem-solving skills.',
@@ -243,26 +243,54 @@ logical, data-driven approaches to create impactful solutions.`,
       label: '# ml-data-science',
       items: [
         {
-          name: 'Jupyter',
-          icon: 'https://cdn.simpleicons.org/jupyter/F37626',
-        },
-        {
-          name: 'Grafana',
-          icon: 'https://cdn.simpleicons.org/grafana/F46800',
+          name: 'Pandas',
+          icon: 'https://cdn.simpleicons.org/pandas/FFFFFF',
         },
         {
           name: 'Scikit-learn',
           icon: 'https://cdn.simpleicons.org/scikitlearn/F7931E',
         },
         {
-          name: 'Pandas',
-          icon: 'https://cdn.simpleicons.org/pandas/FFFFFF',
-        },
-        {
           name: 'TensorFlow',
           icon: 'https://cdn.simpleicons.org/tensorflow/FF6F00',
         },
-        { name: 'Keras', icon: 'https://cdn.simpleicons.org/keras/D00000' },
+        {
+          name: 'Keras',
+          icon: 'https://cdn.simpleicons.org/keras/D00000',
+        },
+      ],
+    },
+    frameworks: {
+      label: '# frameworks',
+      items: [
+        { name: 'React', icon: 'https://cdn.simpleicons.org/react/61DAFB' },
+        {
+          name: 'Next.js',
+          icon: 'https://cdn.simpleicons.org/nextdotjs/FFFFFF',
+        },
+        {
+          name: 'Node.js',
+          icon: 'https://cdn.simpleicons.org/nodedotjs/339933',
+        },
+        {
+          name: 'Laravel',
+          icon: 'https://cdn.simpleicons.org/laravel/FF2D20',
+        },
+        {
+          name: 'FastAPI',
+          icon: 'https://cdn.simpleicons.org/fastapi/009688',
+        },
+        { name: 'Flask', icon: 'https://cdn.simpleicons.org/flask/FFFFFF' },
+      ],
+    },
+    databases: {
+      label: '# databases',
+      items: [
+        { name: 'MySQL', icon: 'https://cdn.simpleicons.org/mysql/4479A1' },
+        {
+          name: 'PostgreSQL',
+          icon: 'https://cdn.simpleicons.org/postgresql/4169E1',
+        },
       ],
     },
     devTools: {
@@ -282,49 +310,20 @@ logical, data-driven approaches to create impactful solutions.`,
           icon: 'https://cdn.simpleicons.org/postman/FF6C37',
         },
         {
-          name: 'Antigravity',
-          icon: 'https://cdn.jsdelivr.net/gh/selfhst/icons/png/google-antigravity.png',
-        },
-        {
           name: 'Vs Code',
           icon: 'https://cdn.jsdelivr.net/gh/selfhst/icons/png/visual-studio-code.png',
+        },
+        {
+          name: 'Jupyter',
+          icon: 'https://cdn.simpleicons.org/jupyter/F37626',
         },
         {
           name: 'Google Colab',
           icon: 'https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/google-colab.png',
         },
-      ],
-    },
-    frameworks: {
-      label: '# frameworks',
-      items: [
-        { name: 'React', icon: 'https://cdn.simpleicons.org/react/61DAFB' },
         {
-          name: 'Laravel',
-          icon: 'https://cdn.simpleicons.org/laravel/FF2D20',
-        },
-        {
-          name: 'Node.js',
-          icon: 'https://cdn.simpleicons.org/nodedotjs/339933',
-        },
-        {
-          name: 'Next.js',
-          icon: 'https://cdn.simpleicons.org/nextdotjs/FFFFFF',
-        },
-        {
-          name: 'FastAPI',
-          icon: 'https://cdn.simpleicons.org/fastapi/009688',
-        },
-        { name: 'Flask', icon: 'https://cdn.simpleicons.org/flask/FFFFFF' },
-      ],
-    },
-    databases: {
-      label: '# databases',
-      items: [
-        { name: 'MySQL', icon: 'https://cdn.simpleicons.org/mysql/4479A1' },
-        {
-          name: 'PostgreSQL',
-          icon: 'https://cdn.simpleicons.org/postgresql/4169E1',
+          name: 'Grafana',
+          icon: 'https://cdn.simpleicons.org/grafana/F46800',
         },
       ],
     },
@@ -374,4 +373,4 @@ logical, data-driven approaches to create impactful solutions.`,
   },
 }
 
-export type SiteConfig = typeof siteConfig;
+export type SiteConfig = typeof siteConfig
