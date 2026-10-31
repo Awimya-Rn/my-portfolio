@@ -25,7 +25,7 @@ export const siteConfig = {
       status: 'Available for opportunities',
       college: 'Malang State Polytechnic',
       gpa: '3.64 / 4.00',
-      projects: '3',
+      projects: '4',
     },
     profileImage: '/images/image.png',
     cvPath: 'CV/CV.pdf',
