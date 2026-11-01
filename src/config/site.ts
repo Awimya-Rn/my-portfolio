@@ -149,6 +149,21 @@ logical, data-driven approaches to create impactful solutions.`,
       color: 'green',
       icon: 'Users',
     },
+    {
+      title: 'Department of Internal',
+      type: 'Organizing Committee',
+      organization: 'Himpunan Mahasiswa Teknologi Informasi',
+      location: 'Malang, East Java',
+      startDate: 'February 2025',
+      endDate: 'desember 2025',
+      duration: '11 Months',
+      badge: '',
+      description:
+        "I have organizational experience as a member of the Information Technology Student Association (HMTI) of Malang State Polytechnic for one period in the Internal Department. In this role, I developed communication skills, teamwork, coordination, and responsibility in carrying out the organization's work programs. This experience shaped my ability to adapt, work collaboratively, and complete tasks in a structured and professional manner.",
+      tags: ['Communication', 'Teamwork', 'Coordination', 'Responsibility'],
+      color: 'yellow',
+      icon: 'Users',
+    },
   ],
 
   projects: [

@@ -234,10 +234,19 @@ pendekatan logis berbasis data untuk menghasilkan solusi yang berdampak.`,
     {
       location: 'Malang, Jawa Timur',
       startDate: 'September 2025',
-      endDate: 'Juni 2026',
-      duration: '10 bulan',
+      endDate: 'Sekarang',
+      // duration: '10 bulan',
       description:
         'Aktif membimbing mentee dalam memahami dasar-dasar informatika. Memberikan materi Java dan konsep OOP untuk mempersiapkan mentee menghadapi tantangan akademik. Membagikan tips dan trik praktis untuk mengasah logika pemrograman dan kemampuan pemecahan masalah.',
+    },
+    {
+      location: 'Malang, Jawa Timur',
+      startDate: 'Februari 2025',
+      endDate: 'Desember 2025',
+      duration: '11 bulan',
+      description:
+        'Saya memiliki pengalaman berorganisasi sebagai anggota Himpunan Mahasiswa Teknologi Informasi (HMTI) Politeknik Negeri Malang selama satu periode di Departemen Internal. Dalam peran ini, saya mengembangkan keterampilan komunikasi, kerja tim, koordinasi, dan tanggung jawab dalam melaksanakan program kerja organisasi. Pengalaman ini membentuk kemampuan saya untuk beradaptasi, bekerja sama, dan menyelesaikan tugas dengan cara yang terstruktur dan profesional.',
+      tags: ['Komunikasi', 'Kerja sama tim', 'Koordinasi', 'Tanggung jawab'],
     },
   ],
 
