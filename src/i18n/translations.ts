@@ -237,7 +237,7 @@ pendekatan logis berbasis data untuk menghasilkan solusi yang berdampak.`,
       endDate: 'Sekarang',
       // duration: '10 bulan',
       description:
-        'Aktif membimbing mentee dalam memahami dasar-dasar informatika. Memberikan materi Java dan konsep OOP untuk mempersiapkan mentee menghadapi tantangan akademik. Membagikan tips dan trik praktis untuk mengasah logika pemrograman dan kemampuan pemecahan masalah.',
+        'Aktif membimbing mentee dalam memahami konsep dasar informatika dan pemrograman. Menyampaikan materi Java serta Object-Oriented Programming (OOP) sebagai bekal menghadapi tantangan akademik. Memberikan pembelajaran Backend Development yang mencakup pengenalan PHP, MySQL, dan implementasi operasi CRUD. Membagikan tips dan trik praktis untuk meningkatkan logika pemrograman, kemampuan analisis, serta keterampilan dalam memecahkan masalah.',
     },
     {
       location: 'Malang, Jawa Timur',

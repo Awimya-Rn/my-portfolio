@@ -144,7 +144,7 @@ logical, data-driven approaches to create impactful solutions.`,
       // duration: '10 Months',
       badge: '',
       description:
-        'Actively guided mentees in understanding informatics fundamentals. Provided Java and OOP concepts to prepare mentees for academic challenges. Shared practical tips and tricks to hone programming logic and problem-solving skills.',
+        'Actively guide mentees in understanding the fundamental concepts of informatics and programming. Deliver instruction on Java and Object-Oriented Programming (OOP) to help them navigate academic challenges. Provide training in backend development, covering an introduction to PHP, MySQL, and the implementation of CRUD operations. Share practical tips and tricks to enhance programming logic, analytical thinking, and problem-solving skills.',
       tags: ['Java', 'OOP', 'Mentoring', 'Back-End', 'PHP', 'Laravel'],
       color: 'green',
       icon: 'Users',
