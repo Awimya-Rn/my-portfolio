@@ -27,7 +27,7 @@ export const siteConfig = {
       gpa: '3.64 / 4.00',
       projects: '4',
     },
-    profileImage: '/images/image.png',
+    profileImage: '/images/hero.webp',
     cvPath: 'CV/CV.pdf',
   },
 
