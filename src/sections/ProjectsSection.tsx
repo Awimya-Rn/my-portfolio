@@ -1,10 +1,13 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { useLanguage } from "@/i18n/LanguageProvider";
 import SectionWrapper from "@/components/SectionWrapper";
-import { ExternalLink, X } from "lucide-react";
+import { ExternalLink, X, ArrowRight } from "lucide-react";
+
+const PREVIEW_COUNT = 3;
 
 const colorMap: Record<string, string> = {
   blue: "border-ctp-blue/30",
@@ -25,6 +28,8 @@ export default function ProjectsSection() {
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
   const { content, t } = useLanguage();
   const { projects } = content;
+  const previewProjects = projects.slice(0, PREVIEW_COUNT);
+  const hasMore = projects.length > PREVIEW_COUNT;
   const selectedProject =
     selectedIndex !== null ? projects[selectedIndex] : null;
 
@@ -45,13 +50,13 @@ export default function ProjectsSection() {
         <div className="font-mono text-[0.68rem] text-ctp-overlay0 mt-3 overflow-x-auto whitespace-nowrap pb-1">
           <span className="text-ctp-green">❯ </span>
           <span className="text-ctp-text">ls -la ~/projects/ </span>
-          <span className="text-ctp-overlay0">| grep -v &apos;^d&apos;</span>
+          <span className="text-ctp-overlay0">| head -n {PREVIEW_COUNT}</span>
         </div>
       </div>
 
-      {/* Projects Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        {projects.map((project, i) => (
+      {/* Projects Grid — 3 per row */}
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+        {previewProjects.map((project, i) => (
           <motion.button
             key={i}
             initial={{ opacity: 0, y: 30 }}
@@ -71,39 +76,39 @@ export default function ProjectsSection() {
             </div>
 
             {/* Content */}
-            <div className="p-5 flex flex-col gap-3">
-              <div className="flex justify-between items-center gap-3">
-                <div className="flex items-center gap-2.5 min-w-0">
+            <div className="p-4 flex flex-col gap-2.5">
+              <div className="flex justify-between items-center gap-2">
+                <div className="flex items-center gap-2 min-w-0">
                   <span className="text-lg text-ctp-overlay0 flex-shrink-0">
                     ~
                   </span>
                   <h3
-                    className={`${colorTextMap[project.color]} text-[0.85rem] font-bold font-mono truncate`}
+                    className={`${colorTextMap[project.color]} text-[0.8rem] font-bold font-mono truncate`}
                   >
                     {project.title}
                   </h3>
                 </div>
-                <span className="bg-ctp-green/8 border border-ctp-green/20 text-ctp-green text-[0.58rem] px-2 py-0.5 rounded-full tracking-wide flex-shrink-0">
+                <span className="bg-ctp-green/8 border border-ctp-green/20 text-ctp-green text-[0.55rem] px-1.5 py-0.5 rounded-full tracking-wide flex-shrink-0">
                   ● {project.status}
                 </span>
               </div>
 
-              <p className="text-ctp-subtext0 text-[0.72rem] leading-relaxed line-clamp-2">
+              <p className="text-ctp-subtext0 text-[0.7rem] leading-relaxed line-clamp-2">
                 {project.description}
               </p>
 
               <div className="flex gap-1.5 flex-wrap">
-                {project.tags.slice(0, 4).map((tag) => (
+                {project.tags.slice(0, 3).map((tag) => (
                   <span
                     key={tag}
-                    className="bg-ctp-surface0 text-ctp-subtext0 text-[0.6rem] px-2 py-0.5 rounded border border-ctp-surface1 font-mono"
+                    className="bg-ctp-surface0 text-ctp-subtext0 text-[0.58rem] px-1.5 py-0.5 rounded border border-ctp-surface1 font-mono"
                   >
                     {tag}
                   </span>
                 ))}
-                {project.tags.length > 4 && (
-                  <span className="text-ctp-overlay0 text-[0.6rem] px-1 py-0.5">
-                    +{project.tags.length - 4}
+                {project.tags.length > 3 && (
+                  <span className="text-ctp-overlay0 text-[0.58rem] px-1 py-0.5">
+                    +{project.tags.length - 3}
                   </span>
                 )}
               </div>
@@ -111,6 +116,31 @@ export default function ProjectsSection() {
           </motion.button>
         ))}
       </div>
+
+      {/* View All Button */}
+      {hasMore && (
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.4, delay: 0.3 }}
+          className="mt-8 flex justify-center"
+        >
+          <Link
+            href="/projects"
+            className="group/btn flex items-center gap-3 px-6 py-3 bg-ctp-surface0/50 hover:bg-ctp-surface0 border border-ctp-surface1 hover:border-ctp-blue/40 rounded-lg transition-all duration-300 font-mono text-[0.78rem]"
+          >
+            <span className="text-ctp-green">❯</span>
+            <span className="text-ctp-text">
+              {t.projects.viewAll}
+            </span>
+            <span className="text-ctp-overlay0 text-[0.65rem]">
+              ({projects.length} {t.projects.items})
+            </span>
+            <ArrowRight className="w-4 h-4 text-ctp-blue group-hover/btn:translate-x-1 transition-transform duration-300" />
+          </Link>
+        </motion.div>
+      )}
 
       {/* Project Detail Modal */}
       <AnimatePresence>

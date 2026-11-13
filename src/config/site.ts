@@ -222,6 +222,16 @@ logical, data-driven approaches to create impactful solutions.`,
       liveUrl: '',
       color: 'red',
     },
+    {
+      title: 'Kenali Batikmu',
+      description:
+        'A Flutter-based mobile application developed as an educational tool to introduce and preserve the tradition of Indonesian batik. This application provides learning features on the history and philosophy of batik motifs, interactive quizzes, batik drawing practicals, and a batik motif scanner. This application aims to help users, especially the younger generation, to more easily recognize, understand, and learn about the uniqueness of Indonesian batik.',
+      image: 'https://i.ibb.co.com/xqzbs0Cr/batikku.webp',
+      status: 'ongoing',
+      tags: ['Flutter', 'Dart', 'Mobile Development', 'Machine Learning', 'Computer Vision'],
+      liveUrl: '',
+      color: '',
+    },
   ],
 
   skills: {

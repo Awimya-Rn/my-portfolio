@@ -41,6 +41,11 @@ const en = {
     modalTitle: "project",
     techStack: "Tech Stack",
     visit: "$ visit project",
+    viewAll: "$ ls --all ~/projects/",
+    items: "items",
+    backHome: "$ cd ~",
+    allProjectsTitle: "all_projects",
+    allProjectsEyebrow: "# 03 — all projects",
   },
 
   skills: {
@@ -109,6 +114,11 @@ const id: UiStrings = {
     modalTitle: "proyek",
     techStack: "Teknologi yang Digunakan",
     visit: "$ kunjungi proyek",
+    viewAll: "$ ls --all ~/proyek/",
+    items: "item",
+    backHome: "$ cd ~",
+    allProjectsTitle: "semua_proyek",
+    allProjectsEyebrow: "# 03 — semua proyek",
   },
 
   skills: {
@@ -286,6 +296,11 @@ pendekatan logis berbasis data untuk menghasilkan solusi yang berdampak.`,
         'Pengembangan prototipe berbasis visi komputer untuk deteksi objek dan eksplorasi pengukuran panjang ikan menggunakan referensi visual. Proyek ini berfokus pada pemanfaatan teknologi pengolahan gambar untuk mengidentifikasi objek dan mengeksplorasi estimasi otomatis ukuran ikan. Proses pengembangan saat ini sedang berlangsung, meliputi pengujian berbagai pendekatan, penyempurnaan prototipe, dan evaluasi hasil untuk meningkatkan akurasi dan keandalan sistem.',
       status: 'sedang berlangsung',
       tags: ['Python', 'Data Engineering', 'Computer Vision'],
+    },
+    {
+      description:
+        'Aplikasi mobile berbasis Flutter yang dikembangkan sebagai media edukasi untuk mengenalkan dan melestarikan budaya batik Nusantara. Aplikasi ini menyediakan fitur pembelajaran sejarah dan filosofi motif batik, kuis interaktif, praktikum menggambar batik, serta pemindai motif batik. Aplikasi ini bertujuan membantu pengguna, khususnya generasi muda, agar lebih mudah mengenali, memahami, dan mempelajari keunikan batik Indonesia.',
+      status: 'sedang berlangsung',
     },
   ],
 }
